@@ -7,7 +7,12 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>measurement</ion-title>
+    <ion-title>
+      measurement
+      <button ion-button icon-only item-end icon-left (click)="goTo('AddMeasurementPage')">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,8 +20,11 @@
 
 <ion-content padding>
 	<ion-list>
-		<button ion-item *ngFor="let measurement of measurements" (click)="goTo(measurement)">
-			{{measurement.name}}<br>{{measurement.key}}<br>{{measurement.value}}<br>{{measurement.unit}}
-		</button>  
-	</ion-list>
+		<button ion-item *ngFor="let measurement of measurements" (click)="linkTo(measurement)">
+			{{measurement.name}}<br>{{measurement.key}} {{measurement.value}} {{measurement.unit}}
+      <button ion-button icon-only item-end icon-left>
+        <ion-icon name="trash"></ion-icon>
+      </button>
+    </button>  
+  </ion-list>
 </ion-content>

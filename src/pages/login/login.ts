@@ -15,7 +15,7 @@ import { AuthProvider } from '../../providers/auth/auth';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  username;
+  email;
   password;
   constructor(public navCtrl: NavController, public navParams: NavParams, private authProvider: AuthProvider) {
   }
@@ -24,10 +24,11 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
   onLogin() {
-  	console.log(this.username, this.password);
-  	this.authProvider.postLogin(this.username, this.password).subscribe( data=>{
+  	console.log(this.email, this.password);
+  	this.authProvider.postLogin(this.email, this.password).subscribe( data=>{
     	console.log(JSON.stringify(data));
       localStorage.setItem('wpTocken', JSON.stringify(data));
+      this.navCtrl.push('MeasurementPage');
     });
   }
 

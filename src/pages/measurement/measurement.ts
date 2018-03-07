@@ -28,9 +28,12 @@ export class MeasurementPage {
     
   }
 
-  goTo(measurement) {
+  linkTo(measurement) {
     console.log(measurement);
     this.navCtrl.push('MeasurementDetailPage', {measurement: measurement});
     
+  }
+  goTo(pageName){
+    this.navCtrl.push(pageName);
   }
 }

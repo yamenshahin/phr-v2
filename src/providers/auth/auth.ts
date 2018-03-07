@@ -17,11 +17,11 @@ export class AuthProvider {
     console.log('Hello AuthProvider Provider');
   }
 
-  postLogin(username, password) {
+  postLogin(password, email) {
 
   	let data = {
-  		username: username,
-  		password: password
+  		password: password,
+      email: email
   	}
 
   	let headers = new HttpHeaders();

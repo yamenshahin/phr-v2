@@ -1,0 +1,44 @@
+<!--
+  Generated template for the AddBloodGlucosePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+	<ion-navbar>
+		<ion-title>AddBloodGlucose</ion-title>
+	</ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-row>
+		<ion-col>
+			<ion-item>
+				<ion-input placeholder="Blood Glucose"></ion-input>	
+				<ion-label color="primary">mg/dL</ion-label>
+			</ion-item>
+		</ion-col>
+	</ion-row>
+	<ion-row>
+		<ion-col>
+			<ion-item>
+				<ion-label color="primary">Type</ion-label>
+				<ion-select [(ngModel)]="type" placeholder="Type">
+					<ion-option value="f">Plasma</ion-option>
+					<ion-option value="m">Whole blood</ion-option>
+				</ion-select>	
+			</ion-item>	
+		</ion-col>
+	</ion-row>
+	<ion-row>
+		<ion-col>
+			<ion-item>
+				<ion-datetime placeholder="MM/DD/YYYY" displayFormat="MM/DD/YYYY" [(ngModel)]="myDate"></ion-datetime>
+				<ion-label color="primary">Date</ion-label>
+			</ion-item>
+		</ion-col>
+	</ion-row>
+</ion-content>
