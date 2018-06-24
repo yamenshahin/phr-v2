@@ -18,7 +18,7 @@
 <ion-content padding>
     <button ion-button icon-only item-end icon-left (click)="goTo('AddMeasurementPage')">
         <ion-icon name="add"></ion-icon>
-      </button>
+    </button>
 	<ion-list>
 		<button ion-item *ngFor="let measurement of measurements" (click)="linkTo(measurement)">
 			{{measurement.name}}<br>{{measurement.key}} {{measurement.value}} {{measurement.unit}}
