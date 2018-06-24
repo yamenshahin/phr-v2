@@ -1,15 +1,19 @@
 <ion-header>
-
+  
   <ion-navbar>
-    <ion-title>
-        Home
-        <ion-icon name="heart-outline" item-end></ion-icon>
+    <!-- <button ion-button menuToggle icon-only>
+      <ion-icon name='menu'></ion-icon>
+    </button> -->
+
+    <ion-title> Home
+      <ion-icon name="heart-outline" item-end></ion-icon>
     </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 <ion-content >
+  <button ion-button (click)="goTo('MeasurementPage')">temporary</button>
   <!-- Add quick access -->
   <ion-fab bottom right>
     <button ion-fab color="primary">

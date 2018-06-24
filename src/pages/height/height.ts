@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the MainPage page.
+ * Generated class for the HeightPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,19 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-main',
-  templateUrl: 'main.html',
+  selector: 'page-height',
+  templateUrl: 'height.html',
 })
-export class MainPage {
+export class HeightPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MainPage');
+    console.log('ionViewDidLoad HeightPage');
   }
-  
-  goTo(pageName){
-    this.navCtrl.push(pageName);
-  }
+
 }
