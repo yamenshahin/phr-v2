@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 
 /**
  * Generated class for the AddBloodPressurePage page.
@@ -14,12 +14,39 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'add-blood-pressure.html',
 })
 export class AddBloodPressurePage {
+  alertCtrl: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddBloodPressurePage');
+  }
+
+  showConfirm() {
+    const confirm = this.alertCtrl.create({
+      title: 'Cancel!',
+      message: 'Are You sure you want to cancel the new measurement?',
+      buttons: [
+        {
+          text: 'No, go back',
+          handler: () => {
+            console.log('Disagree clicked');
+          }
+        },
+        {
+          text: 'Sure',
+          handler: () => {
+            console.log('Agree clicked');
+          }
+        }
+      ]
+    });
+    confirm.present();
+  }
+
+  goTo(pageName){
+    this.navCtrl.push(pageName);
   }
 
 }

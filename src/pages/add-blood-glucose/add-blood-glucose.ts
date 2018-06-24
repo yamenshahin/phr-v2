@@ -22,4 +22,8 @@ export class AddBloodGlucosePage {
     console.log('ionViewDidLoad AddBloodGlucosePage');
   }
 
+  goTo(pageName){
+    this.navCtrl.push(pageName);
+  }
+
 }

@@ -7,12 +7,31 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>blood-glucose</ion-title>
+    <ion-title>Blood Glucose</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+   <!-- Add button -->
+  <ion-fab bottom  (click)="goTo('AddBloodGlucosePage')">
+      <button ion-fab color="primary">
+        <ion-icon name="add" ></ion-icon>
+      </button>
+  </ion-fab>
+  <!-- Edit button -->
+  <ion-fab >
+      <button ion-fab color="primary">
+        <ion-icon name="create"></ion-icon>
+      </button>
+  </ion-fab>
+
+  <!-- Next Button -->
+  <ion-fab right (click)="goTo('BloodPressurePage')">
+      <button ion-fab color="primary">
+        <ion-icon name="return-right"></ion-icon>
+      </button>
+  </ion-fab>
 
 </ion-content>

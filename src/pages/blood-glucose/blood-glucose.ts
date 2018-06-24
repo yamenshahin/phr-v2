@@ -21,5 +21,9 @@ export class BloodGlucosePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad BloodGlucosePage');
   }
+  
+  goTo(pageName){
+    this.navCtrl.push(pageName);
+  }
 
 }

@@ -22,4 +22,7 @@ export class BloodPressurePage {
     console.log('ionViewDidLoad BloodPressurePage');
   }
 
+  goTo(pageName){
+    this.navCtrl.push(pageName);
+  }
 }

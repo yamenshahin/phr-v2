@@ -15,4 +15,47 @@
 
 <ion-content padding>
 
+  
+<ion-content padding>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-input placeholder="Systolic"></ion-input>	
+          <ion-label color="primary">mmHg</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-input placeholder="Distolic"></ion-input>	
+            <ion-label color="primary">mmHg</ion-label>
+          </ion-item>
+      </ion-col>
+    </ion-row>
+    <!-- <ion-row>
+      <ion-col>
+        
+        <ion-item>
+          <ion-label color="primary">Type</ion-label>
+          <ion-select [(ngModel)]="type" placeholder="Type">
+            <ion-option value="f">Plasma</ion-option>
+            <ion-option value="m">Whole blood</ion-option>
+          </ion-select>	
+        </ion-item>	
+      </ion-col>
+    </ion-row> -->
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-datetime placeholder="MM/DD/YYYY" displayFormat="MM/DD/YYYY" [(ngModel)]="myDate"></ion-datetime>
+          <ion-label color="primary">Date</ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <textarea placeholder="Please write any comments the Dr said here" ></textarea>
+    <button ion-button (click)="goTo('BloodPressurePage')">Save</button>
+    <ion-fab >
+        <button ion-fab color="primary" (click)="showConfirm()" >
+          <ion-icon name="close"></ion-icon>
+        </button>
+    </ion-fab>
+  
+
 </ion-content>
