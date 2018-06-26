@@ -22,4 +22,8 @@ export class ChronicPage {
     console.log('ionViewDidLoad ChronicPage');
   }
 
+  goTo(pageName){
+    this.navCtrl.push(pageName);
+  }
+
 }

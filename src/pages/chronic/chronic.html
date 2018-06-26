@@ -7,12 +7,24 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>chronic</ion-title>
+    <ion-title>Chronic Diseases</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-
 <ion-content padding>
+  <!-- Add button -->
+  <ion-fab bottom  (click)="goTo('AddChronicPage')">
+      <button ion-fab color="primary">
+        <ion-icon name="add" ></ion-icon>
+      </button>
+    </ion-fab>
+  
+    <!-- Edit button -->
+      <ion-fab >
+        <button ion-fab color="primary">
+          <ion-icon name="create"></ion-icon>
+        </button>
+      </ion-fab>
 
 </ion-content>

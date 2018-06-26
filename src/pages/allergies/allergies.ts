@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the AddChronicPage page.
+ * Generated class for the AllergiesPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,21 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-add-chronic',
-  templateUrl: 'add-chronic.html',
+  selector: 'page-allergies',
+  templateUrl: 'allergies.html',
 })
-export class AddChronicPage {
+export class AllergiesPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AddChronicPage');
+    console.log('ionViewDidLoad AllergiesPage');
   }
-
-  goTo(pageName){
-    this.navCtrl.push(pageName);
-  }
-
 
 }
