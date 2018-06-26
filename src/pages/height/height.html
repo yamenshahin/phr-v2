@@ -14,5 +14,34 @@
 
 
 <ion-content padding>
-
+  <ion-row>
+    <ion-col >
+      <!-- REMOVE THE br at the css stage,, i just made it to see the add button for testing -->
+      <br>
+      <br>
+      <!-- Add button -->
+      <ion-fab bottom  (click)="goTo('AddHeightPage')">
+        <button ion-fab color="primary">
+          <ion-icon name="add" ></ion-icon>
+        </button>
+      </ion-fab>
+      
+    </ion-col>  
+    <ion-col>
+      <!-- Edit button -->
+      <ion-fab >
+        <button ion-fab color="primary">
+          <ion-icon name="create"></ion-icon>
+        </button>
+      </ion-fab>
+    </ion-col>
+    <ion-col>  
+      <!-- Next Button -->
+      <ion-fab right (click)="goTo('TemperaturePage')">
+        <button ion-fab color="primary">
+          <ion-icon name="return-right"></ion-icon>
+        </button>
+      </ion-fab>
+    </ion-col>
+  </ion-row>
 </ion-content>

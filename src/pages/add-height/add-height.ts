@@ -22,4 +22,9 @@ export class AddHeightPage {
     console.log('ionViewDidLoad AddHeightPage');
   }
 
+  goTo(pageName){
+    this.navCtrl.push(pageName);
+  }
+
+
 }
