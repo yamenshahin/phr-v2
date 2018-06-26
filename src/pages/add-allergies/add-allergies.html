@@ -14,5 +14,55 @@
 
 
 <ion-content padding>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <ion-label floating>Allergy Name</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      
+      <ion-list>
+        <ion-item>
+            <ion-label>Type</ion-label>
+            <ion-select [(ngModel)]="type">
+              <ion-option value="food">Food</ion-option>
+              <ion-option value="med">Medication</ion-option>
+              <ion-option value="animal">Animal</ion-option>
+              <ion-option value="env">Environmental</ion-option>
+              <ion-option value="plant"> Plant</ion-option>
+            </ion-select>
+        </ion-item>
+      </ion-list>
+      <ion-item>
+        <h2>Reaction</h2>
+        <textarea placeholder="Please write down any reactions of this allergy" padding ></textarea>
+      </ion-item>
+      <ion-item>
+          <ion-datetime placeholder="MM/DD/YYYY" displayFormat="MM/DD/YYYY" [(ngModel)]="myDate"></ion-datetime>
+          <ion-label color="primary">First Observed</ion-label>
+        </ion-item>
+      <ion-item>
+        <h2>Treatment</h2>
+        <textarea placeholder="Please write down possible treatments" padding></textarea>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+    
+  <ion-row>
+    <ion-col>
+      <ion-fab right (click)="goTo('AllergiesPage')">
+        <button ion-fab color="primary">
+          <ion-icon name="checkmark"></ion-icon>
+        </button>
+      </ion-fab>
+    </ion-col>
+    <ion-col>
+      <ion-fab >
+        <button ion-fab color="primary" (click)="showConfirm()" >
+          <ion-icon name="close"></ion-icon>
+        </button>
+      </ion-fab>
+    </ion-col>
+  </ion-row>
 
 </ion-content>

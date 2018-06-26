@@ -21,5 +21,9 @@ export class AllergiesPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad AllergiesPage');
   }
+  goTo(pageName){
+    this.navCtrl.push(pageName);
+  }
+
 
 }
