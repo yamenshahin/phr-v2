@@ -22,4 +22,8 @@ export class WeightPage {
     console.log('ionViewDidLoad WeightPage');
   }
 
+  goTo(pageName){
+    this.navCtrl.push(pageName);
+  }
+
 }

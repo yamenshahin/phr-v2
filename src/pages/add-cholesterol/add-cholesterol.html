@@ -14,47 +14,50 @@
 
 
 <ion-content padding>
+  <p>Try to add new measurements continuously so the graph would be more precise</p>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <ion-input placeholder="LDL"></ion-input>	
+        <ion-label color="primary">mg/dL</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="HDL"></ion-input>	
+        <ion-label color="primary">mg/dL</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-input placeholder="Triglycerides"></ion-input>	
+          <ion-label color="primary">mg/dL</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-input placeholder="Total cholesterol"></ion-input>	
+            <ion-label color="primary">mg/dL</ion-label>
+          </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <ion-datetime placeholder="MM/DD/YYYY" displayFormat="MM/DD/YYYY" [(ngModel)]="myDate"></ion-datetime>
+        <ion-label color="primary">Date</ion-label>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-fab right (click)="goTo('CholesterolPage')">
+        <button ion-fab color="primary">
+          <ion-icon name="checkmark"></ion-icon>
+        </button>
+      </ion-fab>
+    </ion-col>
+    <ion-col>
+      <ion-fab >
+        <button ion-fab color="primary" (click)="showConfirm()" >
+          <ion-icon name="close"></ion-icon>
+            </button>
+          </ion-fab>
+    </ion-col>
+  </ion-row>
   
-      <ion-row>
-        <ion-col>
-          <ion-item>
-            <ion-input placeholder="LDL"></ion-input>	
-            <ion-label color="primary">mg/dL</ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-input placeholder="HDL"></ion-input>	
-            <ion-label color="primary">mg/dL</ion-label>
-            </ion-item>
-            <ion-item>
-              <ion-input placeholder="Triglycerides"></ion-input>	
-              <ion-label color="primary">mg/dL</ion-label>
-            </ion-item>
-            <ion-item>
-                <ion-input placeholder="Total cholesterol"></ion-input>	
-                <ion-label color="primary">mg/dL</ion-label>
-              </ion-item>
-        </ion-col>
-      </ion-row>
-      <!-- <ion-row>
-        <ion-col>
-          <ion-item>
-            <ion-label color="primary">Type</ion-label>
-            <ion-select [(ngModel)]="type" placeholder="Type">
-              <ion-option value="f">Plasma</ion-option>
-              <ion-option value="m">Whole blood</ion-option>
-            </ion-select>	
-          </ion-item>	
-        </ion-col>
-      </ion-row> -->
-      <ion-row>
-        <ion-col>
-          <ion-item>
-            <ion-datetime placeholder="MM/DD/YYYY" displayFormat="MM/DD/YYYY" [(ngModel)]="myDate"></ion-datetime>
-            <ion-label color="primary">Date</ion-label>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-    
-      <button ion-button (click)="goTo('CholesterolPage')">Save</button>
-
 </ion-content>
