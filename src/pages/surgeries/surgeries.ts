@@ -21,5 +21,8 @@ export class SurgeriesPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad SurgeriesPage');
   }
+  goTo(pageName){
+    this.navCtrl.push(pageName);
+  }
 
 }

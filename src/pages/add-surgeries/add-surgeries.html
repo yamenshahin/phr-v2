@@ -12,7 +12,41 @@
 
 </ion-header>
 
-
 <ion-content padding>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <ion-label floating>Surgery Type</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <ion-datetime placeholder="MM/DD/YYYY" displayFormat="MM/DD/YYYY" [(ngModel)]="myDate"></ion-datetime>
+        <ion-label color="primary">Date of Operation</ion-label>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <textarea placeholder="Please write down all future precautions" ></textarea>
+  
+  <ion-row>
+      <ion-col>
+        <ion-fab right (click)="goTo('SurgeriesPage')">
+          <button ion-fab color="primary">
+            <ion-icon name="checkmark"></ion-icon>
+          </button>
+        </ion-fab>
+      </ion-col>
+      <ion-col>
+        <ion-fab >
+          <button ion-fab color="primary" (click)="showConfirm()" >
+          <ion-icon name="close"></ion-icon>
+          </button>
+        </ion-fab>
+      </ion-col>
+    </ion-row>
+
+    </ion-col>
+  </ion-row>
 
 </ion-content>
