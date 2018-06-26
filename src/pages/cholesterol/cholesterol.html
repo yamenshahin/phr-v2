@@ -15,4 +15,25 @@
 
 <ion-content padding>
 
+  <!-- Add button -->
+  <ion-fab bottom  (click)="goTo('AddCholesterolPage')">
+    <button ion-fab color="primary">
+      <ion-icon name="add" ></ion-icon>
+    </button>
+  </ion-fab>
+<!-- Edit button -->
+  <ion-fab >
+    <button ion-fab color="primary">
+      <ion-icon name="create"></ion-icon>
+    </button>
+  </ion-fab>
+
+<!-- Next Button -->
+  <ion-fab right (click)="goTo('AddMeasurementPage')">
+    <button ion-fab color="primary">
+      <ion-icon name="body"></ion-icon>
+    </button>
+  </ion-fab>
+
+
 </ion-content>

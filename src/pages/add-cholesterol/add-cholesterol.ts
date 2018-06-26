@@ -22,4 +22,9 @@ export class AddCholesterolPage {
     console.log('ionViewDidLoad AddCholesterolPage');
   }
 
+  goTo(pageName){
+    this.navCtrl.push(pageName);
+  }
+
+
 }
