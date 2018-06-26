@@ -18,8 +18,7 @@ export class RegisterPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  goTo(){
-    this.navCtrl.push('MeasurementPage');
-  }
-  
+  goTo(pageName){
+    this.navCtrl.push(pageName);
+  } 
 }
