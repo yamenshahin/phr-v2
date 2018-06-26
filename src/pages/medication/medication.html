@@ -14,5 +14,29 @@
 
 
 <ion-content padding>
-
+  <!-- REMOVE br at styling stage, made it for testing button shifted above -->
+  <br>
+  <br>
+  <br>  
+  <ion-row>
+    <ion-col>
+        <!-- Add button -->
+        <ion-fab bottom  (click)="goTo('AddMedicationPage')">
+          <button ion-fab color="primary">
+            <ion-icon name="add" ></ion-icon>
+          </button>
+        </ion-fab>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>      
+          <!-- Edit button -->
+        <ion-fab >
+          <button ion-fab color="primary">
+            <ion-icon name="create"></ion-icon>
+          </button>
+        </ion-fab>
+    </ion-col>
+  </ion-row>
 </ion-content>
+  

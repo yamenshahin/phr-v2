@@ -22,4 +22,9 @@ export class AddMedicationPage {
     console.log('ionViewDidLoad AddMedicationPage');
   }
 
+  goTo(pageName){
+    this.navCtrl.push(pageName);
+  }
+
+
 }
