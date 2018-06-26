@@ -14,5 +14,51 @@
 
 
 <ion-content padding>
-
+  <p>Try to add new measurements continuously so the graph would be more precise</p>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <ion-input placeholder="Write a new one here"></ion-input>	
+        <ion-label color="primary">celecius</ion-label>
+      </ion-item>  
+    </ion-col>
+  </ion-row>
+    <!-- <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>Time</ion-label>
+          <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="event.timeStarts"></ion-datetime>
+        </ion-item>
+      </ion-col>
+    </ion-row> -->
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-datetime placeholder="MM/DD/YYYY" displayFormat="MM/DD/YYYY" [(ngModel)]="myDate"></ion-datetime>
+          <ion-label color="primary">Date</ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  <br>
+  <ion-item>
+    <ion-label>Show me graph on Home</ion-label>
+    <ion-checkbox color="primary" no-lines></ion-checkbox>
+  </ion-item>
+  
+  <ion-row>
+    <ion-col>
+        <ion-fab right (click)="goTo('TemperaturePage')">
+          <button ion-fab color="primary">
+            <ion-icon name="checkmark"></ion-icon>
+          </button>
+        </ion-fab>
+        </ion-col>
+    <ion-col>
+        <ion-fab >
+          <button ion-fab color="primary" (click)="showConfirm()" >
+            <ion-icon name="close"></ion-icon>
+          </button>
+        </ion-fab>
+    </ion-col>
+  </ion-row>
 </ion-content>

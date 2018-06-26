@@ -21,5 +21,8 @@ export class AddTemperaturePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddTemperaturePage');
   }
+  goTo(pageName){
+    this.navCtrl.push(pageName);
+  }
 
 }
