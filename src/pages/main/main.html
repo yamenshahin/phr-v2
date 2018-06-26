@@ -13,7 +13,7 @@
 </ion-header>
 
 <ion-content >
-  <button ion-button (click)="goTo('MeasurementPage')">Temporary</button>
+  <button ion-button (click)="goTo('MeasurementPage')">Measurements</button>
   <!-- Add quick access -->
   <ion-fab bottom right>
     <button ion-fab color="primary">
@@ -35,7 +35,7 @@
             <ion-icon name="timer"></ion-icon>
           </button>
         <!-- Measurement quick access button -->
-        <button ion-fab color="primary">
+        <button ion-fab color="primary" (click)="goTo('AddMeasurementPage')">
           <ion-icon name="body"></ion-icon>  
         </button>
 
