@@ -14,6 +14,7 @@
 
 
 <ion-content padding>
+	<p>Try to add new measurements continuously so the graph would be more precise</p>
 	<ion-row>
 		<ion-col>
 			<ion-item>
@@ -41,4 +42,28 @@
 			</ion-item>
 		</ion-col>
 	</ion-row>
+	<textarea placeholder="Please write any comments the Dr said here" ></textarea>
+	<br>
+  	<ion-item>
+    	<ion-label>Show me graph on Home</ion-label>
+    	<ion-checkbox color="primary" checked="true" no-lines></ion-checkbox>
+  	</ion-item>
+  
+	<ion-row>
+		<ion-col>
+			<ion-fab right (click)="goTo('BloodGlucosePage')">
+				<button ion-fab color="primary">
+					<ion-icon name="checkmark"></ion-icon>
+				</button>
+			</ion-fab>
+		</ion-col>
+		<ion-col>
+			<ion-fab >
+				<button ion-fab color="primary" (click)="showConfirm()" >
+				<ion-icon name="close"></ion-icon>
+				</button>
+			</ion-fab>
+		</ion-col>
+	</ion-row>
+
 </ion-content>

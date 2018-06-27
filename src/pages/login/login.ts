@@ -28,7 +28,7 @@ export class LoginPage {
   	this.authProvider.postLogin(this.email, this.password).subscribe( data=>{
     	console.log(JSON.stringify(data));
       localStorage.setItem('wpTocken', JSON.stringify(data));
-      this.navCtrl.push('MeasurementPage');
+      this.navCtrl.push('MainPage');
     });
   }
 
