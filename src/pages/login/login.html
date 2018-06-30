@@ -7,6 +7,17 @@
 <ion-content >
   <img src="assets/imgs/welcomeimg.png">
 	<form #loginForm="ngForm" (ngSubmit)="onLogin()" autocomplete="off">
+    <!-- Handle error -->
+    <ion-row *ngIf="error">
+      <ion-col>
+        <ion-card color="danger">
+          <ion-card-content>
+            {{error}}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <!-- /Handle error -->
     <ion-row>
       <ion-col>
         <ion-list inset>
@@ -21,7 +32,6 @@
     </ion-row>
     <ion-row>
       <ion-col>
-        <div *ngIf="error" class="alert alert-danger">{{error}}</div>
         <button ion-button class="submit-btn" full type="submit" [disabled]="loginForm.invalid">Login</button>
       </ion-col>
       <ion-col>

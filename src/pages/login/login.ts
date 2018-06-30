@@ -17,19 +17,29 @@ import { AuthProvider } from '../../providers/auth/auth';
 export class LoginPage {
   email;
   password;
+  error;
   constructor(public navCtrl: NavController, public navParams: NavParams, private authProvider: AuthProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
+
+
   onLogin() {
   	//console.log(this.email, this.password);
-  	this.authProvider.postLogin(this.email, this.password).subscribe( data=>{
-    	console.log(JSON.stringify(data));
-      localStorage.setItem('wpTocken', JSON.stringify(data));
-      this.navCtrl.push('MainPage');
-    });
+  	this.authProvider.postLogin(this.email, this.password).subscribe( 
+      data => console.log(data),
+      error => this.handelError(error)
+    );
+  }
+
+  /**
+   * Handle login error
+   * @param error 
+   */
+  handelError(error) {
+    this.error = error.error.error;
   }
 
   goTo(pageName){
