@@ -24,7 +24,7 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
   onLogin() {
-  	console.log(this.email, this.password);
+  	//console.log(this.email, this.password);
   	this.authProvider.postLogin(this.email, this.password).subscribe( data=>{
     	console.log(JSON.stringify(data));
       localStorage.setItem('wpTocken', JSON.stringify(data));
