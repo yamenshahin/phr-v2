@@ -22,7 +22,7 @@
     <ion-row>
       <ion-col>
         <div *ngIf="error" class="alert alert-danger">{{error}}</div>
-        <button ion-button class="submit-btn" full type="submit">Login</button>
+        <button ion-button class="submit-btn" full type="submit" [disabled]="loginForm.invalid">Login</button>
       </ion-col>
       <ion-col>
         <button ion-button full color="dark" (click)="goTo('RegisterPage')">Register</button>
