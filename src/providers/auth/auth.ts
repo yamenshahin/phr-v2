@@ -11,13 +11,20 @@ import { HttpHeaders } from '@angular/common/http';
 */
 @Injectable()
 export class AuthProvider {
-	api_url = environment.site_url + environment.login_url;
+	//Back-end API URLs
+	api_login_url= environment.site_url + environment.login_url;
+	api_signup_url= environment.site_url + environment.signup_url;
 
   constructor(public http: HttpClient) {
     console.log('Hello AuthProvider Provider');
   }
 
-  postLogin(password, email) {
+	/**
+	 * Login
+	 * @param password 
+	 * @param email 
+	 */
+  postLogin(email, password) {
 
   	let data = {
   		password: password,
@@ -27,7 +34,31 @@ export class AuthProvider {
   	let headers = new HttpHeaders();
 
   	headers.set('Content-Type', 'application/json');
-  	return this.http.post(this.api_url, data, {
+  	return this.http.post(this.api_login_url, data, {
+  		headers: headers
+  	} );
+	}
+	
+	/**
+	 * Sign Up
+	 * @param password 
+	 * @param email 
+	 * @param name 
+	 * @param password_confirmation
+	 */
+	postSignup(email, password, password_confirmation, name) {
+
+  	let data = {
+  		password: password,
+			email: email,
+			name: name,
+			password_confirmation: password_confirmation
+  	}
+
+  	let headers = new HttpHeaders();
+
+  	headers.set('Content-Type', 'application/json');
+  	return this.http.post(this.api_signup_url, data, {
   		headers: headers
   	} );
   }

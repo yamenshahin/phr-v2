@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
 
 /**
- * Generated class for the LoginPage page.
+ * Generated class for the SignupPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,28 +11,27 @@ import { AuthProvider } from '../../providers/auth/auth';
 
 @IonicPage()
 @Component({
-  selector: 'page-login',
-  templateUrl: 'login.html',
+  selector: 'page-signup',
+  templateUrl: 'signup.html',
 })
-export class LoginPage {
+export class SignupPage {
   email;
   password;
+  password_confirmation;
+  name;
   error;
   constructor(public navCtrl: NavController, public navParams: NavParams, private authProvider: AuthProvider) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+    console.log('ionViewDidLoad SignupPage');
   }
-
-
-  onLogin() {
-  	this.authProvider.postLogin(this.email, this.password).subscribe( 
+  onSignup() {
+    this.authProvider.postSignup(this.email, this.password, this.password_confirmation, this.name).subscribe( 
       data => console.log(data),
       error => this.handelError(error)
     );
   }
-
   /**
    * Handle login error
    * @param error 
@@ -40,7 +39,6 @@ export class LoginPage {
   handelError(error) {
     this.error = error.error.error;
   }
-
   goTo(pageName){
     this.navCtrl.push(pageName);
   }
