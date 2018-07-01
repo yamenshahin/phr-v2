@@ -37,7 +37,7 @@ export class SignupPage {
    * @param error 
    */
   handelError(error) {
-    this.error = error.error.error;
+    this.error = error.error.errors;
   }
   goTo(pageName){
     this.navCtrl.push(pageName);
