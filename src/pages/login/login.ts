@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
+import { TokenProvider } from '../../providers/token/token';
 
 /**
  * Generated class for the LoginPage page.
@@ -18,7 +19,7 @@ export class LoginPage {
   email;
   password;
   error;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private authProvider: AuthProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private authProvider: AuthProvider, private tokenProvider: TokenProvider) {
   }
 
   ionViewDidLoad() {
@@ -28,7 +29,7 @@ export class LoginPage {
 
   onLogin() {
   	this.authProvider.postLogin(this.email, this.password).subscribe( 
-      data => console.log(data),
+      data => this.handleResponse(data['access_token']),
       error => this.handelError(error)
     );
   }
@@ -39,6 +40,10 @@ export class LoginPage {
    */
   handelError(error) {
     this.error = error.error.error;
+  }
+
+  handleResponse(data) {
+    this.tokenProvider.handle(data);
   }
 
   goTo(pageName){

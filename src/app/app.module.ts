@@ -8,6 +8,7 @@ import { MyApp } from './app.component';
 import { AuthProvider } from '../providers/auth/auth';
 import { HttpClientModule } from '@angular/common/http';
 import { MeasurementProvider } from '../providers/measurement/measurement';
+import { TokenProvider } from '../providers/token/token';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { MeasurementProvider } from '../providers/measurement/measurement';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
-    MeasurementProvider
+    MeasurementProvider,
+    TokenProvider
   ]
 })
 export class AppModule {}
