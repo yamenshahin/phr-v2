@@ -8,6 +8,7 @@ import { MyApp } from './app.component';
 import { AuthProvider } from '../providers/auth/auth';
 import { HttpClientModule } from '@angular/common/http';
 import { MeasurementProvider } from '../providers/measurement/measurement';
+import { Camera } from '@ionic-native/camera';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { MeasurementProvider } from '../providers/measurement/measurement';
   ],
   providers: [
     StatusBar,
-    SplashScreen,
+    SplashScreen,Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
     MeasurementProvider

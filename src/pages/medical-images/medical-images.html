@@ -14,5 +14,10 @@
 
 
 <ion-content padding>
+  <button ion-button (click)="takePhoto()">Take Photo</button>
+  <button ion-button (click)="getImage()">Get Photo From Gallery</button>
+  <button ion-button (click)="cropImage()">Crop Image</button>
+
+  <p align="center"><img src="{{ myphoto }}"></p>
 
 </ion-content>
