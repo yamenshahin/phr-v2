@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
+import { TokenProvider } from '../../providers/token/token';
 
 /**
  * Generated class for the SignupPage page.
@@ -20,7 +21,7 @@ export class SignupPage {
   password_confirmation;
   name;
   error;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private authProvider: AuthProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private authProvider: AuthProvider, private tokenProvider: TokenProvider) {
   }
 
   ionViewDidLoad() {
@@ -28,16 +29,24 @@ export class SignupPage {
   }
   onSignup() {
     this.authProvider.postSignup(this.email, this.password, this.password_confirmation, this.name).subscribe( 
-      data => console.log(data),
-      error => this.handelError(error)
+      data => this.handleResponse(data),
+      error => this.handleError(error)
     );
   }
+  
   /**
    * Handle login error
    * @param error 
    */
-  handelError(error) {
+  
+  handleError(error) {
     this.error = error.error.errors;
+  }
+  handleResponse(data) {
+    // Remember this receive an object of token + user not just a token
+    this.tokenProvider.handle(data);
+    // TODO: Set default redirect to registerPage to add new child, or go to home/dashboard
+    this.navCtrl.push('RegisterPage');
   }
   goTo(pageName){
     this.navCtrl.push(pageName);

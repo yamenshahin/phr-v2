@@ -30,7 +30,7 @@ export class LoginPage {
   onLogin() {
   	this.authProvider.postLogin(this.email, this.password).subscribe( 
       data => this.handleResponse(data['access_token']),
-      error => this.handelError(error)
+      error => this.handleError(error)
     );
   }
 
@@ -38,7 +38,7 @@ export class LoginPage {
    * Handle login error
    * @param error 
    */
-  handelError(error) {
+  handleError(error) {
     this.error = error.error.error;
   }
 

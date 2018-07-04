@@ -20,7 +20,11 @@ export class TokenProvider {
   }
 
   handle(token) {
-    this.set(token);
+    if(token['access_token']) {
+      this.set(token['access_token']);
+    } else {
+      this.set(token);
+    }
   }
 
   set(token) {
