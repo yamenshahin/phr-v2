@@ -44,6 +44,8 @@ export class LoginPage {
 
   handleResponse(data) {
     this.tokenProvider.handle(data);
+    // TODO: Set default to registerPage to add new child, or go to home/dashboard
+    this.navCtrl.push('register');
   }
 
   goTo(pageName){
