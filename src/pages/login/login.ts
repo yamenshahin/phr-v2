@@ -20,6 +20,10 @@ export class LoginPage {
   password;
   error;
   constructor(public navCtrl: NavController, public navParams: NavParams, private authProvider: AuthProvider, private tokenProvider: TokenProvider) {
+    // If already login
+    if(tokenProvider.get()) {
+      this.navCtrl.setRoot('RegisterPage');
+    }
   }
 
   ionViewDidLoad() {
