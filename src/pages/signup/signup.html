@@ -1,0 +1,58 @@
+<!--
+  Generated template for the SignupPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Sign Up</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <form #signupForm="ngForm" (ngSubmit)="onSignup()" autocomplete="off">
+      <!-- Handle error -->
+      <ion-row *ngIf="error">
+        <ion-col>
+          <ion-card color="danger">
+            <ion-card-content>
+              {{error.name}}
+              {{error.email}}
+              {{error.password}}
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <!-- /Handle error -->
+      <ion-row>
+        <ion-col>
+          <ion-list inset>
+            <ion-item>
+              <ion-input placeholder="Your Name" name="name" id="nameField" type="text" required [(ngModel)]="name"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input placeholder="Email" name="email" id="emailField" type="email" required [(ngModel)]="email"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input placeholder="Password" name="password" id="passwordField" type="password" required [(ngModel)]="password"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input placeholder="Confirm Password" name="password_confirmation" id="passwordConfirmation" type="password" required [(ngModel)]="password_confirmation"></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <button ion-button class="submit-btn" full type="submit" [disabled]="signupForm.invalid">Sign Up</button>
+        </ion-col>
+        <ion-col>
+          <button ion-button full color="dark" (click)="goTo('LoginPage')">Login</button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-content>
