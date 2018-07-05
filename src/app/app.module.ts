@@ -9,6 +9,7 @@ import { AuthProvider } from '../providers/auth/auth';
 import { HttpClientModule } from '@angular/common/http';
 import { MeasurementProvider } from '../providers/measurement/measurement';
 import { TokenProvider } from '../providers/token/token';
+import { AuthenticationProvider } from '../providers/authentication/authentication';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { TokenProvider } from '../providers/token/token';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
     MeasurementProvider,
-    TokenProvider
+    TokenProvider,
+    AuthenticationProvider
   ]
 })
 export class AppModule {}
