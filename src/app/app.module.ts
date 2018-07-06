@@ -9,6 +9,8 @@ import { AuthProvider } from '../providers/auth/auth';
 import { HttpClientModule } from '@angular/common/http';
 import { MeasurementProvider } from '../providers/measurement/measurement';
 import { TokenProvider } from '../providers/token/token';
+import { LocalNotifications } from '@ionic-native/local-notifications';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { TokenProvider } from '../providers/token/token';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
     MeasurementProvider,
-    TokenProvider
+    TokenProvider,
+    LocalNotifications
   ]
 })
 export class AppModule {}
