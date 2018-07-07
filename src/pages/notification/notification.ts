@@ -31,10 +31,9 @@ export class NotificationPage {
     console.log(date);
     this.localNotifications.schedule({
        text: 'Delayed ILocalNotification',
-       //CHECK this error with Yamen??
-       at: date,
+       trigger : {at: date},
        led: 'FF0000',
-       sound: this.setSound(),
+      // sound: this.setSound(),
     });
     let alert = this.alertCtrl.create({
       title: 'Congratulation!',
@@ -45,12 +44,12 @@ export class NotificationPage {
     this.data = { title:'', description:'', date:'', time:'' };
   }
 
-  setSound() {
-  if (this.platform.is('android')) {
-    return 'file://assets/sounds/Rooster.mp3'
-  } else {
-    return 'file://assets/sounds/Rooster.caf'
-  }
-}
+  /*setSound() {
+    if (this.platform.is('android')) {
+      return 'file://assets/sounds/Rooster.mp3'
+    } else {
+      return 'file://assets/sounds/Rooster.caf'
+    }
+  }*/
 
 }
