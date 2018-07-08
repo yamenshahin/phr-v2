@@ -9,6 +9,9 @@ import { AuthProvider } from '../providers/auth/auth';
 import { HttpClientModule } from '@angular/common/http';
 import { MeasurementProvider } from '../providers/measurement/measurement';
 
+import { Camera } from '@ionic-native/camera';
+
+
 @NgModule({
   declarations: [
     MyApp
@@ -27,7 +30,8 @@ import { MeasurementProvider } from '../providers/measurement/measurement';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
-    MeasurementProvider
+    MeasurementProvider,
+    Camera
   ]
 })
 export class AppModule {}
