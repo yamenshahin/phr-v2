@@ -10,6 +10,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { MeasurementProvider } from '../providers/measurement/measurement';
 import { TokenProvider } from '../providers/token/token';
 
+import { Camera } from '@ionic-native/camera';
+
+
 @NgModule({
   declarations: [
     MyApp
@@ -29,6 +32,7 @@ import { TokenProvider } from '../providers/token/token';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
     MeasurementProvider,
+    Camera,
     TokenProvider
   ]
 })
