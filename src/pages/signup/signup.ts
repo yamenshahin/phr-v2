@@ -4,7 +4,7 @@ import { AuthProvider } from '../../providers/auth/auth';
 import { TokenProvider } from '../../providers/token/token';
 
 /**
- * Generated class for the LoginPage page.
+ * Generated class for the SignupPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -12,46 +12,42 @@ import { TokenProvider } from '../../providers/token/token';
 
 @IonicPage()
 @Component({
-  selector: 'page-login',
-  templateUrl: 'login.html',
+  selector: 'page-signup',
+  templateUrl: 'signup.html',
 })
-export class LoginPage {
+export class SignupPage {
   email;
   password;
+  password_confirmation;
+  name;
   error;
   constructor(public navCtrl: NavController, public navParams: NavParams, private authProvider: AuthProvider, private tokenProvider: TokenProvider) {
-    // If already login
-    if(tokenProvider.get()) {
-      this.navCtrl.setRoot('RegisterPage');
-    }
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+    console.log('ionViewDidLoad SignupPage');
   }
-
-
-  onLogin() {
-  	this.authProvider.postLogin(this.email, this.password).subscribe( 
-      data => this.handleResponse(data['access_token']),
+  onSignup() {
+    this.authProvider.postSignup(this.email, this.password, this.password_confirmation, this.name).subscribe( 
+      data => this.handleResponse(data),
       error => this.handleError(error)
     );
   }
-
+  
   /**
    * Handle login error
    * @param error 
    */
+  
   handleError(error) {
-    this.error = error.error.error;
+    this.error = error.error.errors;
   }
-
   handleResponse(data) {
+    // Remember this receive an object of token + user not just a token
     this.tokenProvider.handle(data);
     // TODO: Set default redirect to registerPage to add new child, or go to home/dashboard
     this.navCtrl.push('RegisterPage');
   }
-
   goTo(pageName){
     this.navCtrl.push(pageName);
   }
