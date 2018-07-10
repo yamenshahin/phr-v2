@@ -17,16 +17,29 @@
   <ion-row>
     <ion-col>
       <ion-item>
-        <!-- this should be a search bar with a database of diseases names and a auto complete -->
-        <ion-label floating>Diagnosis</ion-label>
-        <ion-input type="text"></ion-input>
-      </ion-item>
-      <ion-item>
-        <h2>Medication Course</h2>
-        <!-- CRUD should be added here and still needs the database?! -->
+        <!-- <ion-searchbar placeholder="Diagnosis"
+        [(ngModel)]="myInput"
+        [showCancelButton]="shouldShowCancel"
+        (ionInput)="onInput($event)"
+        (ionCancel)="onCancel($event)">
+        </ion-searchbar> -->
+        <button ion-button (click)="toggle()">Diagnosis</button>
+        <ion-searchbar *ngIf="toggled" (ionInput)="getItems($event)" 
+          (ionCancel)="onCancel($event)" animated="true">
+        </ion-searchbar>
       </ion-item>  
     </ion-col>
   </ion-row>
+  Possible diseases:
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      {{ item }}
+    </ion-item>
+  </ion-list>
+  <ion-item>
+    <h2>Medication Course</h2>
+    <!-- CRUD should be added here and still needs the database?! -->
+    </ion-item>
   <ion-row>
     <ion-col>
       <ion-item>

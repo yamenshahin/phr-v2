@@ -14,7 +14,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'add-medication.html',
 })
 export class AddMedicationPage {
-
+  toggled: boolean;
+  items: string[];
+  
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -26,5 +28,31 @@ export class AddMedicationPage {
     this.navCtrl.push(pageName);
   }
 
+
+
+  initializeItems() {
+    this.items = [
+      'Flu',
+      'Diabetes',
+      'Acne',
+      'Headache'
+    ];
+  }
+
+  getItems(ev) {
+    this.initializeItems();
+    var val = ev.target.value;
+    if (val && val.trim() != '') {
+      this.items = this.items.filter((item) => {
+        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
+    }
+  }
+
+  onCancel(event) { }
+
+  public toggle():void {
+    this.toggled = this.toggled ? false : true;
+  }
 
 }

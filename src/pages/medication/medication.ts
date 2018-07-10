@@ -14,7 +14,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'medication.html',
 })
 export class MedicationPage {
-
+ 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
