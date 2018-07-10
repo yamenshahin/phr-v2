@@ -14,11 +14,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'register.html',
 })
 export class RegisterPage {
-
+  name;
+  gender;
+  birthdate;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   goTo(pageName){
     this.navCtrl.push(pageName);
   } 
+
+  onAddChild() {
+
+  }
 }
