@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, ToastController } from 'ionic-angular';
 
 /**
  * Generated class for the AddBloodPressurePage page.
@@ -16,7 +16,7 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 export class AddBloodPressurePage {
   alertCtrl: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController) {
   }
 
   ionViewDidLoad() {
@@ -47,6 +47,15 @@ export class AddBloodPressurePage {
 
   goTo(pageName){
     this.navCtrl.push(pageName);
+  }
+
+  presentToast(position){
+    let toast = this.toastCtrl.create({
+      message: 'New blood pressure measurement was added successfully',
+      duration: 3000,
+      position: position
+    });
+    toast.present();
   }
 
 }
