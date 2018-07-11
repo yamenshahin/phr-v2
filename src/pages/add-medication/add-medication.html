@@ -64,7 +64,7 @@
 
   <ion-row>
       <ion-col>
-          <ion-fab right (click)="goTo('MedicationPage')">
+          <ion-fab right (click)="presentToast('bottom')" (click)="goTo('MedicationPage')">
             <button ion-fab color="primary">
               <ion-icon name="checkmark"></ion-icon>
             </button>

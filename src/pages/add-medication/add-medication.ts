@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 
 /**
  * Generated class for the AddMedicationPage page.
@@ -17,7 +17,7 @@ export class AddMedicationPage {
   toggled: boolean;
   items: string[];
   
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController) {
   }
 
   ionViewDidLoad() {
@@ -55,4 +55,13 @@ export class AddMedicationPage {
     this.toggled = this.toggled ? false : true;
   }
 
+  presentToast(position){
+    let toast = this.toastCtrl.create({
+      message: 'New medication course is added, hope you child gets well soon..',
+      duration: 4000,
+      position: position
+    });
+    toast.present();
+  }
+  
 }
