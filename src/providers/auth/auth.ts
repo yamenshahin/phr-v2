@@ -14,6 +14,7 @@ export class AuthProvider {
 	//Back-end API URLs
 	api_login_url= environment.site_url + environment.login_url;
 	api_signup_url= environment.site_url + environment.signup_url;
+	api_register_url = environment.site_url + environment.register_url;
 
   constructor(public http: HttpClient) {
     console.log('Hello AuthProvider Provider');
@@ -61,5 +62,23 @@ export class AuthProvider {
   	return this.http.post(this.api_signup_url, data, {
   		headers: headers
   	} );
-  }
+	}
+	
+	postAddChild(name, gender, birthdate, token) {
+		let data = {
+			name : name,
+			gender : gender,
+			birthdate :birthdate
+		}
+		
+		let authorization = 'Bearer ' + token
+		let headers = new HttpHeaders({
+			'Content-Type':  'application/json',
+			'Authorization': authorization
+		})
+
+		return this.http.post(this.api_register_url, data, {
+			headers: headers
+		})
+	}
 }

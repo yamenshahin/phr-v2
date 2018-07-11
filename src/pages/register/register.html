@@ -12,7 +12,18 @@
 </ion-header>
 
 <ion-content padding>
-  <form #addChildForm="ngForm" (ngSubmit)="onLogin()" autocomplete="off">
+  <form #addChildForm="ngForm" (ngSubmit)="onAddChild()" autocomplete="off">
+    <!-- Handle message -->
+    <ion-row *ngIf="message">
+      <ion-col>
+        <ion-card color="secondary">
+          <ion-card-content>
+            {{message}}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <!-- /Handle message -->
     <ion-item>
       <ion-label floating>Child's Name</ion-label>
       <ion-input type="text" value="" name="name" [(ngModel)]="name" required></ion-input>
@@ -21,8 +32,8 @@
     <ion-item>
       <ion-label>Gender</ion-label>
       <ion-select name="gender" [(ngModel)]="gender" required>
-        <ion-option value="f">Female</ion-option>
-        <ion-option value="m">Male</ion-option>
+        <ion-option value="Female">Female</ion-option>
+        <ion-option value="Male">Male</ion-option>
       </ion-select>
     </ion-item>
 
