@@ -5,5 +5,5 @@ export const environment = {
 	'logout_url'   : 'logout?',
 	'recover_url'  : 'recover',
 	'register_url' : 'addSubuser',
-	'measurement_url' : 'measurements'
+	'getMeasurements_url' : 'getMeasurements'
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { MeasurementProvider } from '../../providers/measurement/measurement';
+import { TokenProvider } from '../../providers/token/token';
+import { AuthProvider } from '../../providers/auth/auth';
 
 /**
  * Generated class for the MeasurementPage page.
@@ -16,8 +17,12 @@ import { MeasurementProvider } from '../../providers/measurement/measurement';
 })
 export class MeasurementPage {
   measurements;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private measurementProvider: MeasurementProvider) {
-  	this.measurementProvider.getMeasurement().subscribe( data=>{
+  token;
+  
+  
+  constructor(public navCtrl: NavController, public navParams: NavParams, private authProvider: AuthProvider, private tokenProvider: TokenProvider) {
+    this.token = this.tokenProvider.get();
+  	this.authProvider.getMeasurements(this.token).subscribe( data=>{
     	console.log(data);
     	this.measurements= data;
     });

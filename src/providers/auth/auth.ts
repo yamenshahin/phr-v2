@@ -15,6 +15,7 @@ export class AuthProvider {
 	api_login_url= environment.site_url + environment.login_url;
 	api_signup_url= environment.site_url + environment.signup_url;
 	api_register_url = environment.site_url + environment.register_url;
+	api_getMeasurements_url = environment.site_url + environment.getMeasurements_url;
 
   constructor(public http: HttpClient) {
     console.log('Hello AuthProvider Provider');
@@ -64,6 +65,13 @@ export class AuthProvider {
   	} );
 	}
 	
+	/**
+	 * Add child
+	 * @param name 
+	 * @param gender 
+	 * @param birthdate 
+	 * @param token 
+	 */
 	postAddChild(name, gender, birthdate, token) {
 		let data = {
 			name : name,
@@ -80,5 +88,14 @@ export class AuthProvider {
 		return this.http.post(this.api_register_url, data, {
 			headers: headers
 		})
+	}
+	getMeasurements(token) {
+		let authorization = 'Bearer ' + token
+		let headers = new HttpHeaders({
+			'Content-Type':  'application/json',
+			'Authorization': authorization
+		})
+
+		return this.http.get(this.api_getMeasurements_url+'/?token='+token)
 	}
 }
