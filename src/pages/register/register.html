@@ -12,26 +12,35 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-item>
-    <ion-label floating>Child's Name</ion-label>
-    <ion-input type="text" value="" [(ngModel)]="name"></ion-input>
-  </ion-item>
+  <form #addChildForm="ngForm" (ngSubmit)="onLogin()" autocomplete="off">
+    <ion-item>
+      <ion-label floating>Child's Name</ion-label>
+      <ion-input type="text" value="" [(ngModel)]="name" required></ion-input>
+    </ion-item>
 
-  <ion-item>
+    <ion-item>
       <ion-label>Gender</ion-label>
-      <ion-select [(ngModel)]="gender">
+      <ion-select name="gender" [(ngModel)]="gender" required>
         <ion-option value="f">Female</ion-option>
         <ion-option value="m">Male</ion-option>
       </ion-select>
-  </ion-item>
+    </ion-item>
 
-  <ion-row>
+    <ion-row>
       <ion-col>
         <ion-item>
-          <ion-datetime placeholder="MM/DD/YYYY" displayFormat="MM/DD/YYYY" [(ngModel)]="birthdate"></ion-datetime>
+          <ion-datetime name="birthdate" placeholder="YYYY-MM-DD" displayFormat="YYYY-MM-DD" [(ngModel)]="birthdate" required></ion-datetime>
           <ion-label color="primary">Birthdate</ion-label>
         </ion-item>
       </ion-col>
     </ion-row>
-  <button ion-button (click)="goTo('MainPage')">Add</button>
+    <ion-row>
+      <ion-col>
+        <button ion-button class="submit-btn" full type="submit" [disabled]="addChildForm.invalid">Add</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button full color="dark" (click)="goTo('MainPage')">Not now</button>
+      </ion-col>
+    </ion-row>
+  </form>
 </ion-content>
