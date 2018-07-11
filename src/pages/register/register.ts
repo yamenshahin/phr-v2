@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AuthProvider } from '../../providers/auth/auth';
+import { TokenProvider } from '../../providers/token/token';
 
 /**
  * Generated class for the RegisterPage page.
@@ -17,7 +19,8 @@ export class RegisterPage {
   name;
   gender;
   birthdate;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  token;
+  constructor(public navCtrl: NavController, public navParams: NavParams, private authProvider: AuthProvider, private tokenProvider: TokenProvider) {
   }
 
   goTo(pageName){
@@ -25,6 +28,9 @@ export class RegisterPage {
   } 
 
   onAddChild() {
-
+    this.token = this.tokenProvider.get();
+    this.authProvider.postAddChild(this.name, this.gender, this.birthdate, this.token).subscribe( 
+      data => console.log(data)
+    );
   }
 }
