@@ -11,6 +11,9 @@ import { MeasurementProvider } from '../providers/measurement/measurement';
 import { TokenProvider } from '../providers/token/token';
 import { AuthenticationProvider } from '../providers/authentication/authentication';
 
+import { Camera } from '@ionic-native/camera';
+
+
 @NgModule({
   declarations: [
     MyApp
@@ -31,7 +34,9 @@ import { AuthenticationProvider } from '../providers/authentication/authenticati
     AuthProvider,
     MeasurementProvider,
     TokenProvider,
-    AuthenticationProvider
+    AuthenticationProvider,
+    Camera,
+    TokenProvider
   ]
 })
 export class AppModule {}
