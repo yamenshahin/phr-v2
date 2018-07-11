@@ -15,7 +15,7 @@
   <form #addChildForm="ngForm" (ngSubmit)="onLogin()" autocomplete="off">
     <ion-item>
       <ion-label floating>Child's Name</ion-label>
-      <ion-input type="text" value="" [(ngModel)]="name" required></ion-input>
+      <ion-input type="text" value="" name="name" [(ngModel)]="name" required></ion-input>
     </ion-item>
 
     <ion-item>
