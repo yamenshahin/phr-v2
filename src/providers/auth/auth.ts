@@ -91,11 +91,12 @@ export class AuthProvider {
 	}
 	getMeasurements(token) {
 		let authorization = 'Bearer ' + token
-		let headers = new HttpHeaders({
-			'Content-Type':  'application/json',
-			'Authorization': authorization
-		})
 
 		return this.http.get(this.api_getMeasurements_url+'/?token='+token)
+	}
+	getMeasurementsWithName(token, measurementsName) {
+		let authorization = 'Bearer ' + token
+
+		return this.http.get(this.api_getMeasurements_url+'/'+measurementsName+'?token='+token)
 	}
 }
