@@ -8,6 +8,11 @@
 
   <ion-navbar>
     <ion-title>Add Weight</ion-title>
+    <ion-buttons end>
+			<button ion-button icon-only>
+				<ion-icon name="checkmark"></ion-icon>
+			</button>
+		</ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -18,7 +23,7 @@
   <ion-row>
     <ion-col>
       <ion-item>
-        <ion-input placeholder="Write a new one here"></ion-input>	
+        <ion-input type="number" placeholder="Write a new one here"></ion-input>	
         <ion-label color="primary">kg</ion-label>
       </ion-item>  
     </ion-col>
@@ -26,7 +31,7 @@
     <ion-row>
       <ion-col>
         <ion-item>
-          <ion-datetime placeholder="MM/DD/YYYY" displayFormat="MM/DD/YYYY" [(ngModel)]="myDate"></ion-datetime>
+          <ion-datetime placeholder="YYYY-MM-DD HH:mm" displayFormat="YYYY-MM-DD HH:mm" [(ngModel)]="myDate"></ion-datetime>
           <ion-label color="primary">Date</ion-label>
         </ion-item>
       </ion-col>
@@ -37,21 +42,4 @@
     <ion-label>Show me graph on Home</ion-label>
     <ion-checkbox color="primary" checked="true" no-lines></ion-checkbox>
   </ion-item>
-  
-  <ion-row>
-    <ion-col>
-        <ion-fab right (click)="goTo('WeightPage')">
-          <button ion-fab color="primary">
-            <ion-icon name="checkmark"></ion-icon>
-          </button>
-        </ion-fab>
-        </ion-col>
-    <ion-col>
-        <ion-fab >
-          <button ion-fab color="primary" (click)="showConfirm()" >
-            <ion-icon name="close"></ion-icon>
-          </button>
-        </ion-fab>
-    </ion-col>
-  </ion-row>
 </ion-content>
