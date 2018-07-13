@@ -9,7 +9,7 @@
   <ion-navbar>
     <ion-title>ModalMeasurementType</ion-title>
     <ion-buttons end>
-			<button ion-button icon-only (click)="close()">
+			<button ion-button icon-only (click)="closeThis()">
 				<ion-icon name="close"></ion-icon>
 			</button>
 		</ion-buttons>
@@ -19,5 +19,35 @@
 
 
 <ion-content padding>
-  content goes here
+  <ion-list >	
+		<button ion-item (click)="goTo('AddWeightPage')">
+			<ion-icon name="add" item-end></ion-icon>
+				Add Weight
+		</button>
+			
+		 <button ion-item (click)="goTo('AddHeightPage')">
+			<ion-icon name="add" item-end></ion-icon>
+				Add Height				
+		</button>
+
+		<button ion-item (click)="goTo('AddTemperaturePage')">
+			<ion-icon name="add" item-end></ion-icon>
+				Add Temperature				
+		</button>
+
+		<button ion-item (click)="goTo('AddBloodGlucosePage')">
+			<ion-icon name="add" item-end></ion-icon>
+				Add Blood Glucose				
+		</button>
+
+		<button ion-item (click)="goTo('AddBloodPressurePage')">
+			<ion-icon name="add" item-end></ion-icon>
+				Add Blood Pressure				
+		</button>
+					
+		<button ion-item (click)="goTo('AddCholesterolPage')">
+			<ion-icon name="add" item-end></ion-icon>
+				Add Cholesterol				
+		</button>
+	</ion-list>
 </ion-content>

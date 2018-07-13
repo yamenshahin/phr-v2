@@ -22,7 +22,11 @@ export class ModalMeasurementTypePage {
     console.log('ionViewDidLoad ModalMeasurementTypePage');
   }
 
-  close() {
+  goTo(pageName){
+    this.navCtrl.push(pageName);
+  }
+  
+  closeThis() {
     this.view.dismiss();
   }
 
