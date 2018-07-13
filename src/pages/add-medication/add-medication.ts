@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angu
 import { Injectable } from '@angular/core';
 import { environment } from '../../environment';
 import { HttpClient } from '@angular/common/http';
-
 /**
  * Generated class for the AddMedicationPage page.
  *
@@ -21,6 +20,9 @@ export class AddMedicationPage {
   toggled: boolean;
   items: string[];
   toggleVal: boolean;
+  public currentNumber = 0;
+  public currentNumberT = 0;
+
 //  jsonList= this.http.get(this.http://localhost:8100/ICD9.json)
   
   constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController, public http: HttpClient) {
@@ -35,8 +37,6 @@ export class AddMedicationPage {
   }
 
   initializeItems() {
-//    this.items = Object.values(jsonList)
-//    return jsonList
     this.items = [
       'Influenza', 'Diabetes', 'Acne','Headache', 'Chickenpox', 
       'Asthma', 'pneumonia', 'Cough', 'mumps','rubella',
@@ -80,7 +80,23 @@ export class AddMedicationPage {
     });
     toast.present();
   }
-  
+
+  public increment () {
+  this.currentNumber++;
+}
+
+  public decrement () {
+  this.currentNumber--;
+}
+
+public incrementT () {
+  this.currentNumberT++;
+}
+
+  public decrementT () {
+  this.currentNumberT--;
+}
+
 }
 
 

@@ -14,7 +14,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'call-number.html',
 })
 export class CallNumberPage {
-
+  public currentNumber = 0;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -22,4 +22,14 @@ export class CallNumberPage {
     console.log('ionViewDidLoad CallNumberPage');
   }
 
+  public increment() {
+    this.currentNumber++;
+  }
+
+  public decrement() {
+    this.currentNumber--;
+  }
+  
 }
+
+
