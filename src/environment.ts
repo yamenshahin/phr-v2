@@ -4,5 +4,6 @@ export const environment = {
 	'signup_url'  : 'signup',
 	'logout_url'   : 'logout?',
 	'recover_url'  : 'recover',
-	'measurement_url' : 'measurements'
+	'register_url' : 'addSubuser',
+	'getMeasurements_url' : 'getMeasurements'
 }
