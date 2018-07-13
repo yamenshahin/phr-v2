@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavParams, Platform } from 'ionic-angular';
-import { CallNumber} from '@ionic-native/call-number';
-
-import { HttpClientModule } from '@angular/common/http'; 
-import { Http, HttpModule} from '@angular/http'
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
  * Generated class for the CallNumberPage page.
@@ -19,21 +15,11 @@ import { Http, HttpModule} from '@angular/http'
 })
 export class CallNumberPage {
 
-  phoneNumber: string;
-  constructor(public navParams: NavParams, private platform: Platform, private callNumber: CallNumber) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-  async call() {
-    //this makes sure everything is ready before calling native APIs
-   await this.platform.ready();
 
-  //1st call# for importing injected version of call# from ionic native library and 2nd is for call# fnc.
-    try{
-      await this.callNumber.callNumber(this.phoneNumber, true);
-      console.log("Opened Dialer");
-    }
-    catch (e) {
-      console.error(e || "Error Launching Dialer");
-    }
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad CallNumberPage');
   }
 
 }
