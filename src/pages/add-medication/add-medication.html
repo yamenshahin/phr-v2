@@ -17,7 +17,7 @@
   <ion-row>
     <ion-col>
       <ion-item>
-        <button ion-button (click)="toggle()">Diagnosis</button>
+        <button ion-button outline center (click)="toggle()">Diagnosis</button>
         <ion-searchbar *ngIf="toggled" (ionInput)="getItems($event)" 
           (ionCancel)="onCancel($event)" animated="true">
         </ion-searchbar>
@@ -34,12 +34,12 @@
     <ion-col>
       <ion-item>
         Medication Course
-        <ion-label fixed full>Drug Name</ion-label>
-        <ion-input type="text" value=""></ion-input>
+        <ion-label floating>Drug Name</ion-label>
+        <ion-input type="text" ></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label fixed full>Drug Name</ion-label>
-        <ion-input type="password"></ion-input>
+        <ion-label floating>Drug Name</ion-label>
+        <ion-input type="text"></ion-input>
       </ion-item>
       <ion-item>
                   <!-- Add new drug name -->
