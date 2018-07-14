@@ -2,6 +2,11 @@
 
   <ion-navbar>
     <ion-title>AddBloodPressure</ion-title>
+    <ion-buttons end>
+			<button ion-button icon-only>
+				<ion-icon name="checkmark"></ion-icon>
+			</button>
+		</ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -35,22 +40,4 @@
     	<ion-label>Show me graph on Home</ion-label>
     	<ion-checkbox color="primary" checked="true" no-lines></ion-checkbox>
   	</ion-item>
-  
-    <ion-row>
-      <ion-col>
-        <ion-fab right (click)="goTo('BloodPressurePage')">
-          <button ion-fab color="primary">
-            <ion-icon name="checkmark"></ion-icon>
-          </button>
-        </ion-fab>
-      </ion-col>
-      <ion-col>
-        <ion-fab >
-          <button ion-fab color="primary" (click)="showConfirm()" >
-          <ion-icon name="close"></ion-icon>
-          </button>
-        </ion-fab>
-      </ion-col>
-    </ion-row>
-
 </ion-content>

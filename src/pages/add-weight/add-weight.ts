@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AuthProvider } from '../../providers/auth/auth';
+import { TokenProvider } from '../../providers/token/token';
 
 /**
  * Generated class for the AddWeightPage page.
@@ -14,8 +16,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'add-weight.html',
 })
 export class AddWeightPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  date_taken;
+  note;
+  value; 
+  token;
+  constructor(public navCtrl: NavController, public navParams: NavParams, private authProvider: AuthProvider, private tokenProvider: TokenProvider) {
   }
 
   ionViewDidLoad() {
@@ -24,6 +29,11 @@ export class AddWeightPage {
 
   goTo(pageName){
     this.navCtrl.push(pageName);
+  }
+
+  onAddMeasurement() {
+    this.token = this.tokenProvider.get();
+    this.authProvider.postAddMeasurement('Weight', this.date_taken, this.note, 'Weight', this.value, "12", this.token).subscribe();
   }
 
 }

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { AuthProvider } from '../../providers/auth/auth';
+import { TokenProvider } from '../../providers/token/token';
 
 /**
  * Generated class for the AddBloodPressurePage page.
@@ -14,39 +16,26 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
   templateUrl: 'add-blood-pressure.html',
 })
 export class AddBloodPressurePage {
-  alertCtrl: any;
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  date_taken;
+  note;
+  key; 
+  value; 
+  unit_id;
+  token;
+  constructor(public navCtrl: NavController, public navParams: NavParams, private authProvider: AuthProvider, private tokenProvider: TokenProvider) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AddBloodPressurePage');
-  }
-
-  showConfirm() {
-    const confirm = this.alertCtrl.create({
-      title: 'Cancel!',
-      message: 'Are You sure you want to cancel the new measurement?',
-      buttons: [
-        {
-          text: 'No, go back',
-          handler: () => {
-            console.log('Disagree clicked');
-          }
-        },
-        {
-          text: 'Sure',
-          handler: () => {
-            console.log('Agree clicked');
-          }
-        }
-      ]
-    });
-    confirm.present();
+    console.log('ionViewDidLoad AddWeightPage');
   }
 
   goTo(pageName){
     this.navCtrl.push(pageName);
+  }
+
+  onAddMeasurement() {
+    this.token = this.tokenProvider.get();
+    this.authProvider.postAddMeasurement('Blood Pressure', this.date_taken, this.note, this.key, this.value, this.unit_id, this.token).subscribe();
   }
 
 }

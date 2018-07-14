@@ -8,6 +8,11 @@
 
   <ion-navbar>
     <ion-title>Add Cholesterol</ion-title>
+    <ion-buttons end>
+			<button ion-button icon-only>
+				<ion-icon name="checkmark"></ion-icon>
+			</button>
+		</ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -43,23 +48,5 @@
       </ion-item>
     </ion-col>
   </ion-row>
-  <textarea placeholder="Please write any comments the Dr said here" ></textarea>
-
-  <ion-row>
-    <ion-col>
-      <ion-fab right (click)="goTo('CholesterolPage')">
-        <button ion-fab color="primary">
-          <ion-icon name="checkmark"></ion-icon>
-        </button>
-      </ion-fab>
-    </ion-col>
-    <ion-col>
-      <ion-fab >
-        <button ion-fab color="primary" (click)="showConfirm()" >
-          <ion-icon name="close"></ion-icon>
-            </button>
-          </ion-fab>
-    </ion-col>
-  </ion-row>
-  
+  <textarea placeholder="Please write any comments the Dr said here" ></textarea>  
 </ion-content>
