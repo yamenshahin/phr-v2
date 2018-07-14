@@ -14,49 +14,12 @@
 
 
 <ion-content padding>
-  <ion-row>
-    <ion-col >
-      <!-- REMOVE THE br at the css stage,, i just made it to see the add button for testing -->
-      <br>
-      <br>
-      <!-- Add button -->
-      <ion-fab bottom  (click)="goTo('AddHeightPage')">
-        <button ion-fab color="primary">
-          <ion-icon name="add" ></ion-icon>
-        </button>
-      </ion-fab>
-      
-    </ion-col>  
-    <ion-col>
-      <!-- Edit button -->
-      <ion-fab >
-        <button ion-fab color="primary">
-          <ion-icon name="create"></ion-icon>
-        </button>
-      </ion-fab>
-    </ion-col>
-    <ion-col>  
-      <!-- Next Button -->
-      <ion-fab right (click)="goTo('TemperaturePage')">
-        <button ion-fab color="primary">
-          <ion-icon name="return-right"></ion-icon>
-        </button>
-      </ion-fab>
-    </ion-col>
-  </ion-row>
 
- <!-- Current saved measurements -->
- <ion-card>
-    <ion-card-header>JUN25</ion-card-header>
-    <ion-card-content>63 cm</ion-card-content>
-  </ion-card>
-  <ion-card>
-    <ion-card-header>APR9</ion-card-header>
-    <ion-card-content>60 cm</ion-card-content>
-  </ion-card>
-  <ion-card>
-      <ion-card-header>MAR 4</ion-card-header>
-      <ion-card-content>58 cm</ion-card-content>
-    </ion-card>
+  <button ion-item *ngFor="let measurement of measurements" (click)="linkTo(measurement)">
+    {{measurement.name}}<br>{{measurement.key}} {{measurement.value}} {{measurement.unit}}
+    <button ion-button icon-only item-end icon-left>
+      <ion-icon name="trash"></ion-icon>
+    </button>
+  </button>
 
 </ion-content>

@@ -8,6 +8,11 @@
 
 	<ion-navbar>
 		<ion-title>AddBloodGlucose</ion-title>
+		<ion-buttons end>
+			<button ion-button icon-only>
+				<ion-icon name="checkmark"></ion-icon>
+			</button>
+		</ion-buttons>
 	</ion-navbar>
 
 </ion-header>
@@ -18,7 +23,7 @@
 	<ion-row>
 		<ion-col>
 			<ion-item>
-				<ion-input placeholder="Blood Glucose"></ion-input>	
+				<ion-input placeholder="Blood Glucose"></ion-input>
 				<ion-label color="primary">mg/dL</ion-label>
 			</ion-item>
 		</ion-col>
@@ -30,8 +35,8 @@
 				<ion-select [(ngModel)]="type" placeholder="Type">
 					<ion-option value="f">Plasma</ion-option>
 					<ion-option value="m">Whole blood</ion-option>
-				</ion-select>	
-			</ion-item>	
+				</ion-select>
+			</ion-item>
 		</ion-col>
 	</ion-row>
 	<ion-row>
@@ -42,28 +47,10 @@
 			</ion-item>
 		</ion-col>
 	</ion-row>
-	<textarea placeholder="Please write any comments the Dr said here" ></textarea>
+	<textarea placeholder="Please write any comments the Dr said here"></textarea>
 	<br>
-  	<ion-item>
-    	<ion-label>Show me graph on Home</ion-label>
-    	<ion-checkbox color="primary" checked="true" no-lines></ion-checkbox>
-  	</ion-item>
-  
-	<ion-row>
-		<ion-col>
-			<ion-fab right (click)="presentToast('bottom')" (click)="goTo('BloodGlucosePage')">
-				<button ion-fab color="primary">
-					<ion-icon name="checkmark"></ion-icon>
-				</button>
-			</ion-fab>
-		</ion-col>
-		<ion-col>
-			<ion-fab >
-				<button ion-fab color="primary" (click)="showConfirm()" >
-				<ion-icon name="close"></ion-icon>
-				</button>
-			</ion-fab>
-		</ion-col>
-	</ion-row>
-
+	<ion-item>
+		<ion-label>Show me graph on Home</ion-label>
+		<ion-checkbox color="primary" checked="true" no-lines></ion-checkbox>
+	</ion-item>
 </ion-content>

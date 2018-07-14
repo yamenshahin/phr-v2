@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { TokenProvider } from '../../providers/token/token';
+import { AuthProvider } from '../../providers/auth/auth';
 
 /**
  * Generated class for the BloodPressurePage page.
@@ -14,12 +16,25 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'blood-pressure.html',
 })
 export class BloodPressurePage {
+  measurements;
+  token;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private authProvider: AuthProvider, private tokenProvider: TokenProvider) {
+    this.token = this.tokenProvider.get();
+    this.authProvider.getMeasurementsWithName(this.token, 'blood pressure').subscribe( data=>{
+    	console.log(data);
+    	this.measurements= data;
+    });
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad BloodPressurePage');
+  }
+
+  linkTo(measurement) {
+    console.log(measurement);
+    this.navCtrl.push('MeasurementDetailPage', {measurement: measurement});
+    
   }
 
   goTo(pageName){

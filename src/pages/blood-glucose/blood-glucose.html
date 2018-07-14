@@ -14,37 +14,13 @@
 
 
 <ion-content padding>
-   <!-- Add button -->
-  <ion-fab bottom  (click)="goTo('AddBloodGlucosePage')">
-      <button ion-fab color="primary">
-        <ion-icon name="add" ></ion-icon>
-      </button>
-  </ion-fab>
-  <!-- Edit button -->
-  <ion-fab >
-      <button ion-fab color="primary">
-        <ion-icon name="create"></ion-icon>
-      </button>
-  </ion-fab>
 
-  <!-- Next Button -->
-  <ion-fab right (click)="goTo('BloodPressurePage')">
-      <button ion-fab color="primary">
-        <ion-icon name="return-right"></ion-icon>
-      </button>
-  </ion-fab>
-  <!-- Current saved measurements -->
-  <ion-card>
-      <ion-card-header>JUN25</ion-card-header>
-      <ion-card-content>200 mg/dl | 2-hours post prandial</ion-card-content>
-    </ion-card>
-    <ion-card>
-      <ion-card-header>JUN25</ion-card-header>
-      <ion-card-content>160 mg/dl | fasting</ion-card-content>
-      </ion-card>
-    <ion-card>
-        <ion-card-header>JUN 24</ion-card-header>
-        <ion-card-content>180 mg/dl | random</ion-card-content>
-      </ion-card>
+  <button ion-item *ngFor="let measurement of measurements" (click)="linkTo(measurement)">
+    {{measurement.name}}<br>{{measurement.key}} {{measurement.value}} {{measurement.unit}}
+    <button ion-button icon-only item-end icon-left>
+      <ion-icon name="trash"></ion-icon>
+    </button>
+  </button>
+
 
 </ion-content>

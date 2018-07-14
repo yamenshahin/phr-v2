@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+
+
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AuthProvider } from '../../providers/auth/auth';
+import { TokenProvider } from '../../providers/token/token';
 
 /**
  * Generated class for the AddHeightPage page.
@@ -15,25 +19,28 @@ import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angu
 })
 export class AddHeightPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController) {
+
+  date_taken;
+  note;
+  key; 
+  value; 
+  unit_id;
+  token;
+  constructor(public navCtrl: NavController, public navParams: NavParams, private authProvider: AuthProvider, private tokenProvider: TokenProvider) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AddHeightPage');
+    console.log('ionViewDidLoad AddWeightPage');
   }
 
   goTo(pageName){
     this.navCtrl.push(pageName);
   }
 
-    
-  presentToast(position){
-    let toast = this.toastCtrl.create({
-      message: 'New height measurement was added successfully',
-      duration: 3000,
-      position: position
-    });
-    toast.present();
+
+  onAddMeasurement() {
+    this.token = this.tokenProvider.get();
+    this.authProvider.postAddMeasurement('Height', this.date_taken, this.note, this.key, this.value, this.unit_id, this.token).subscribe();
   }
 
 }

@@ -14,40 +14,13 @@
 
 
 <ion-content padding>
-  <!-- Add button -->
-  <ion-fab bottom  (click)="goTo('AddWeightPage')">
-    <button ion-fab color="primary">
-      <ion-icon name="add" ></ion-icon>
+  
+  <button ion-item *ngFor="let measurement of measurements" (click)="linkTo(measurement)">
+    {{measurement.name}}<br>{{measurement.key}} {{measurement.value}} {{measurement.unit}}
+    <button ion-button icon-only item-end icon-left>
+      <ion-icon name="trash"></ion-icon>
     </button>
-  </ion-fab>
-  <!-- Edit button -->
-    <ion-fab >
-      <button ion-fab color="primary">
-        <ion-icon name="create"></ion-icon>
-      </button>
-    </ion-fab>
+  </button>  
 
-  <!-- Next Button -->
-    <ion-fab right (click)="goTo('HeightPage')">
-      <button ion-fab color="primary">
-        <ion-icon name="return-right"></ion-icon>
-      </button>
-    </ion-fab>
-    <!-- Current saved measurements -->
-    <ion-card>
-      <ion-card-header>JUN25</ion-card-header>
-      <ion-card-content>23 kg</ion-card-content>
-    </ion-card>
-    <ion-card>
-      <ion-card-header>JUN13</ion-card-header>
-      <ion-card-content>24 kg</ion-card-content>
-    </ion-card>
-    <ion-card>
-        <ion-card-header>JUN5</ion-card-header>
-        <ion-card-content>25.3 kg</ion-card-content>
-      </ion-card>
-    <ion-card>
-      <ion-card-header>MAY27</ion-card-header>
-      <ion-card-content>27 kg</ion-card-content>
-    </ion-card>
+
 </ion-content>
