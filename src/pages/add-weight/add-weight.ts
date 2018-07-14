@@ -18,9 +18,7 @@ import { TokenProvider } from '../../providers/token/token';
 export class AddWeightPage {
   date_taken;
   note;
-  key; 
   value; 
-  unit_id;
   token;
   constructor(public navCtrl: NavController, public navParams: NavParams, private authProvider: AuthProvider, private tokenProvider: TokenProvider) {
   }
@@ -35,7 +33,7 @@ export class AddWeightPage {
 
   onAddMeasurement() {
     this.token = this.tokenProvider.get();
-    this.authProvider.postAddMeasurement('Weight', this.date_taken, this.note, this.key, this.value, this.unit_id, this.token).subscribe();
+    this.authProvider.postAddMeasurement('Weight', this.date_taken, this.note, 'Weight', this.value, "12", this.token).subscribe();
   }
 
 }
