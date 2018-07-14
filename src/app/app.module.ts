@@ -8,6 +8,7 @@ import { MyApp } from './app.component';
 import { AuthProvider } from '../providers/auth/auth';
 import { HttpClientModule } from '@angular/common/http';
 import { TokenProvider } from '../providers/token/token';
+
 import { AuthenticationProvider } from '../providers/authentication/authentication';
 
 import { Camera } from '@ionic-native/camera';
@@ -20,7 +21,8 @@ import { Camera } from '@ionic-native/camera';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule
+    HttpClientModule,
+    HttpModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [

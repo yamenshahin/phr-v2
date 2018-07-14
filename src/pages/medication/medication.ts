@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+//import { directiveDef } from '../../../node_modules/@angular/core/src/view';
 
 /**
  * Generated class for the MedicationPage page.
@@ -14,8 +15,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'medication.html',
 })
 export class MedicationPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+ 
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
@@ -26,5 +27,23 @@ export class MedicationPage {
     this.navCtrl.push(pageName);
   }
 
+  showAlert() {
+    const alert = this.alertCtrl.create({
+      title: 'Diagnosis: Cough',
+      subTitle: '(Zutripro oral-benzonatate oral-Mucinex D oral-Iophen CNR) Taking Times: 2/Day',
+      buttons: ['OK']
+    });
+    alert.present();
+  }
+
+  showAlert2(){
+    const alert = this.alertCtrl.create({
+      title: 'Diagnosis: Influenza',
+      subTitle: '(Clotrimazole cream, Zinc pyrithione soap) Taking Times: 3/Day',
+      buttons: ['OK']
+    });
+    alert.present();
+  }
 
 }
+

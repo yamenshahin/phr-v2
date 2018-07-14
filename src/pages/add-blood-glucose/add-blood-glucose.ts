@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
 import { TokenProvider } from '../../providers/token/token';
@@ -33,6 +34,7 @@ export class AddBloodGlucosePage {
   goTo(pageName){
     this.navCtrl.push(pageName);
   }
+
 
   onAddMeasurement() {
     this.token = this.tokenProvider.get();

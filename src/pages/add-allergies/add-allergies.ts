@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 
 /**
  * Generated class for the AddAllergiesPage page.
@@ -15,7 +15,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AddAllergiesPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController) {
   }
 
   ionViewDidLoad() {
@@ -24,5 +24,14 @@ export class AddAllergiesPage {
   goTo(pageName){
     this.navCtrl.push(pageName);
   }
-
+  
+  
+  presentToast(position){
+    let toast = this.toastCtrl.create({
+      message: 'New allergy was added successfully',
+      duration: 3000,
+      position: position
+    });
+    toast.present();
+  }
 }

@@ -50,7 +50,7 @@
     
   <ion-row>
     <ion-col>
-      <ion-fab right (click)="goTo('AllergiesPage')">
+      <ion-fab right (click)="presentToast('bottom')" (click)="goTo('AllergiesPage')">
         <button ion-fab color="primary">
           <ion-icon name="checkmark"></ion-icon>
         </button>

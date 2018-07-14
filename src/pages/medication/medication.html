@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>medication</ion-title>
+    <ion-title>Medication</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -38,5 +38,31 @@
         </ion-fab>
     </ion-col>
   </ion-row>
+<!-- previous medications -->
+  <ion-list>
+    <ion-item>
+      <h2>Cough</h2>
+      <p>AUG25| 7DAYS </p>
+      <button ion-button clear item-end (click)="showAlert()">View</button>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item>
+      <h2>Influenza</h2>
+      <p>JUL13| 10DAYS </p>
+      <button ion-button clear item-end (click)="showAlert2()">View</button>
+    </ion-item>
+  </ion-list>
+
+  
+  <ion-list>
+    <ion-item>
+      <h2>Tinea</h2>
+      <p>JUN2| 15DAYS </p>
+      <button ion-button clear item-end (click)="showAlert2()">View</button>
+    </ion-item>
+  </ion-list>
+
 </ion-content>
   

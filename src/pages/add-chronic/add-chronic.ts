@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 
 /**
  * Generated class for the AddChronicPage page.
@@ -15,7 +15,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AddChronicPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController) {
   }
 
   ionViewDidLoad() {
@@ -24,6 +24,15 @@ export class AddChronicPage {
 
   goTo(pageName){
     this.navCtrl.push(pageName);
+  }
+
+  presentToast(position){
+    let toast = this.toastCtrl.create({
+      message: 'New chronic disease is recorded, hope your child gets well soon..',
+      duration: 4000,
+      position: position
+    });
+    toast.present();
   }
 
 }

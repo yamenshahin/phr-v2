@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 
 /**
  * Generated class for the AllergiesPage page.
@@ -15,7 +15,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AllergiesPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
@@ -25,5 +25,31 @@ export class AllergiesPage {
     this.navCtrl.push(pageName);
   }
 
+  presentPopover(){
+    const alert = this.alertCtrl.create({
+      title: 'Information:',
+      subTitle: 'Type:Food ... Reactions: trouble breathing,coughing, throat tightness,stomach upset, and vomiting.',
+      buttons: ['OK']
+    });
+    alert.present();
+  }
+  
+  presentPopover2(){
+    const alert = this.alertCtrl.create({
+      title: 'Information:',
+      subTitle: 'Type: Food.. Reactions: red spots, swelling, trouble breathing, coughing, stomach upset, and vomiting.',
+      buttons: ['OK']
+    });
+    alert.present();
+  }
+
+  presentPopover3(){
+    const alert = this.alertCtrl.create({
+      title: 'Information:',
+      subTitle: 'Type: Animals.. Reactions:runny, itchy, stuffy nose,, sneezing, coughing and wheezing, red, itchy eyes',
+      buttons: ['OK']
+    });
+    alert.present();
+  }
 
 }

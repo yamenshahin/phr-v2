@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
 import { TokenProvider } from '../../providers/token/token';
@@ -17,6 +18,7 @@ import { TokenProvider } from '../../providers/token/token';
   templateUrl: 'add-cholesterol.html',
 })
 export class AddCholesterolPage {
+
   date_taken;
   note;
   key; 
@@ -33,6 +35,7 @@ export class AddCholesterolPage {
   goTo(pageName){
     this.navCtrl.push(pageName);
   }
+
 
   onAddMeasurement() {
     this.token = this.tokenProvider.get();
