@@ -12,7 +12,11 @@
 </ion-header>
 
 <ion-content >
+  <div>
+    <canvas id="canvas">{{ chart }}</canvas>
+  </div>
   <ion-list>
+    <li> <button ion-button (click)="chartDisplay('weight')">Measurements</button> </li>
     <li> <button ion-button (click)="goTo('MainMeasurementPage')">Measurements</button> </li>
     <li> <button ion-button (click)="goTo('ChronicPage')">Chronic Diseases</button> </li>
     <li> <button ion-button (click)="goTo('AllergiesPage')">Allergies</button> </li>

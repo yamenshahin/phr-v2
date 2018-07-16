@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
+import { AuthProvider } from '../../providers/auth/auth';
+import { TokenProvider } from '../../providers/token/token';
+import { Chart } from 'chart.js';
 
 /**
  * Generated class for the MainPage page.
@@ -14,8 +17,10 @@ import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angul
   templateUrl: 'main.html',
 })
 export class MainPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, public menu: MenuController) {
+  token;
+  measurements;
+  chart;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public menu: MenuController, private authProvider: AuthProvider, private tokenProvider: TokenProvider) {
     menu.enable(true);
   }
 
@@ -25,5 +30,48 @@ export class MainPage {
   
   goTo(pageName){
     this.navCtrl.push(pageName);
+  }
+
+  chartDisplay(measurementsName) {
+    this.token = this.tokenProvider.get();
+    this.authProvider.getMeasurementsWithName(this.token, measurementsName).subscribe( data=>{
+    	console.log(data);
+      this.measurements= data;
+      let chartValue = this.measurements.map(measurements => measurements.value);
+      let chartDate = this.measurements.map(measurements => measurements.date_taken);
+      console.log(chartValue, chartDate);
+      
+      this.chart = new Chart('canvas', {
+        type: 'line',
+        data: {
+          labels: chartDate,
+          datasets: [
+            {
+              data: chartValue,
+              borderColor: '#3cba9f',
+              fill: false
+            }
+          ]
+        },
+        options: {
+          legend: {
+            display: false
+          },
+          scales: {
+            xAxes: [
+              {
+                display: true
+              }
+            ],
+            yAxes: [
+              {
+                display: true
+              }
+            ]
+          }
+        }
+      })
+    });
+
   }
 }

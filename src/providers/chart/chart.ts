@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { AuthProvider } from '../auth/auth';
+import { TokenProvider } from '../token/token';
 
 /*
   Generated class for the ChartProvider provider.
@@ -9,9 +11,11 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class ChartProvider {
-
-  constructor(public http: HttpClient) {
+  measurements;
+  token;
+  constructor(public http: HttpClient, ) {
     console.log('Hello ChartProvider Provider');
   }
 
+  
 }
