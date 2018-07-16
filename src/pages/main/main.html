@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar>
-    <button ion-button menuToggle ="left" icon-only>
+    <button ion-button menuToggle="left" icon-only>
       <ion-icon name='menu'></ion-icon>
     </button>
     <ion-title> Home
@@ -11,8 +11,65 @@
 
 </ion-header>
 
-<ion-content >
 
+<ion-content>
+  <ion-toolbar>
+    <ion-buttons start>
+      <button ion-button icon-only>
+        <ion-icon name="create"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-segment [(ngModel)]="chartButtons">
+      <ion-segment-button value="Weight" (click)="chartDisplay('weight')" activated>
+        Weight
+      </ion-segment-button>
+      <ion-segment-button value="Height" (click)="chartDisplay('height')">
+        Height
+      </ion-segment-button>
+    </ion-segment>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+  <div>
+    <canvas id="canvas">{{ chart }}</canvas>
+  </div>
+  <!-- Add quick access -->
+  <ion-fab bottom right>
+    <button ion-fab color="primary">
+      <ion-icon name="add"></ion-icon>
+    </button>
+
+    <ion-fab-list side="top">
+
+      <!-- Medical image quick access button -->
+      <button ion-fab color="primary">
+        <ion-icon name="images"></ion-icon>
+      </button>
+      <!-- Vaccination quick access button  -->
+      <button ion-fab color="primary">
+        <ion-icon name="md-color-filter"></ion-icon>
+      </button>
+      <!-- Medication quick access button -->
+      <button ion-fab color="primary">
+        <ion-icon name="timer"></ion-icon>
+      </button>
+      <!-- Measurement quick access button -->
+      <button ion-fab color="primary" (click)="goTo('AddMeasurementPage')">
+        <ion-icon name="body"></ion-icon>
+      </button>
+
+    </ion-fab-list>
+
+  </ion-fab>
+  <!-- history button "should be next to the add button on the bottom right" -->
+  <ion-fab bottom>
+    <button ion-fab color="primary">
+      <ion-icon name="rewind"></ion-icon>
+    </button>
+  </ion-fab>
     <ion-list >
         <button ion-item (click)="goTo('MainMeasurementPage')">
           <ion-icon name="body" item-start></ion-icon>

@@ -12,6 +12,7 @@ import { TokenProvider } from '../providers/token/token';
 import { AuthenticationProvider } from '../providers/authentication/authentication';
 
 import { Camera } from '@ionic-native/camera';
+import { ChartProvider } from '../providers/chart/chart';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { Camera } from '@ionic-native/camera';
     TokenProvider,
     AuthenticationProvider,
     Camera,
-    TokenProvider
+    TokenProvider,
+    ChartProvider
   ]
 })
 export class AppModule {}
