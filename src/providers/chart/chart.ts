@@ -52,10 +52,38 @@ export class ChartProvider {
           ];
         break;
       case 'height':
-        [1,2,3,4,5];
-        this.chartMaxValues = [1,2,3,4,5];
+        this.chartMaxValues = [54.7,
+          56,
+          57.2,
+          58.2,
+          59.2,
+          60.1,
+          61,
+          61.9,
+          62.6,
+          63.4,
+          64.1,
+          64.8,
+          65.5,
+          66.1
+          ];
+        break;
       default:
-        this.chartMaxValues = [1,2,3,4,5];
+        this.chartMaxValues = [54.7,
+          56,
+          57.2,
+          58.2,
+          59.2,
+          60.1,
+          61,
+          61.9,
+          62.6,
+          63.4,
+          64.1,
+          64.8,
+          65.5,
+          66.1
+          ];
     }
     return this.chartMaxValues;
   }
@@ -79,10 +107,38 @@ export class ChartProvider {
           ];
         break;
       case 'height':
-        [1,2,3,4,5];
-        this.chartMinValues = [1,2,3,4,5];
+        this.chartMinValues = [43.6,
+          44.7,
+          45.8,
+          46.7,
+          47.5,
+          48.3,
+          49.1,
+          49.8,
+          50.5,
+          51.2,
+          51.8,
+          52.4,
+          52.9,
+          53.5
+          ];
+        break;
       default:
-        this.chartMinValues = [1,2,3,4,5];
+        this.chartMinValues = [43.6,
+          44.7,
+          45.8,
+          46.7,
+          47.5,
+          48.3,
+          49.1,
+          49.8,
+          50.5,
+          51.2,
+          51.8,
+          52.4,
+          52.9,
+          53.5
+          ];
     }
     return this.chartMinValues;
   }

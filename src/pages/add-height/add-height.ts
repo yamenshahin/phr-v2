@@ -22,9 +22,7 @@ export class AddHeightPage {
 
   date_taken;
   note;
-  key; 
   value; 
-  unit_id;
   token;
   constructor(public navCtrl: NavController, public navParams: NavParams, private authProvider: AuthProvider, private tokenProvider: TokenProvider) {
   }
@@ -40,7 +38,7 @@ export class AddHeightPage {
 
   onAddMeasurement() {
     this.token = this.tokenProvider.get();
-    this.authProvider.postAddMeasurement('Height', this.date_taken, this.note, this.key, this.value, this.unit_id, this.token).subscribe();
+    this.authProvider.postAddMeasurement('Height', this.date_taken, this.note, 'Height', this.value, "7", this.token).subscribe();
   }
 
 }

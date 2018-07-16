@@ -21,8 +21,10 @@ export class MainPage {
   token;
   measurements;
   chart;
+  chartButtons;
   constructor(public navCtrl: NavController, public navParams: NavParams, public menu: MenuController, private authProvider: AuthProvider, private tokenProvider: TokenProvider, private chartProvider: ChartProvider) {
-    menu.enable(true);
+    this.chartDisplay('weight');
+    this.chartButtons = 'Weight';
   }
 
   ionViewDidLoad() {
@@ -36,14 +38,13 @@ export class MainPage {
   chartDisplay(measurementsName) {
     this.token = this.tokenProvider.get();
     this.authProvider.getMeasurementsWithName(this.token, measurementsName).subscribe( data=>{
-    	console.log(data);
       this.measurements= data;
       let chartValue = this.measurements.map(measurements => measurements.value);
       let chartDate = this.measurements.map(measurements => measurements.date_taken);
-      console.log(chartValue, chartDate);
       let chartMaxValues = this.chartProvider.chartMax(measurementsName);
       let chartMinValues = this.chartProvider.chartMin(measurementsName);
       let chartLabelValues = this.chartProvider.chartLabelValues;
+      console.log(chartMinValues, chartMaxValues);
       this.chart = new Chart('canvas', {
         type: 'line',
         data: {
