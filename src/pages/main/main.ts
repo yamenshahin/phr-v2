@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angul
 import { AuthProvider } from '../../providers/auth/auth';
 import { TokenProvider } from '../../providers/token/token';
 import { Chart } from 'chart.js';
+import { ChartProvider } from '../../providers/chart/chart';
 
 /**
  * Generated class for the MainPage page.
@@ -20,7 +21,7 @@ export class MainPage {
   token;
   measurements;
   chart;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public menu: MenuController, private authProvider: AuthProvider, private tokenProvider: TokenProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public menu: MenuController, private authProvider: AuthProvider, private tokenProvider: TokenProvider, private chartProvider: ChartProvider) {
     menu.enable(true);
   }
 
@@ -40,15 +41,28 @@ export class MainPage {
       let chartValue = this.measurements.map(measurements => measurements.value);
       let chartDate = this.measurements.map(measurements => measurements.date_taken);
       console.log(chartValue, chartDate);
-      
+      let chartMaxValues = this.chartProvider.chartMax(measurementsName);
+      let chartMinValues = this.chartProvider.chartMin(measurementsName);
+      let chartLabelValues = this.chartProvider.chartLabelValues;
       this.chart = new Chart('canvas', {
         type: 'line',
         data: {
-          labels: chartDate,
+          labels: chartLabelValues,
           datasets: [
             {
               data: chartValue,
-              borderColor: '#3cba9f',
+              borderColor: 'green',
+              fill: false
+            },
+            {
+              data: chartMaxValues,
+              borderColor: 'red',
+              fill: false
+            }
+            ,
+            {
+              data: chartMinValues,
+              borderColor: 'blue',
               fill: false
             }
           ]
