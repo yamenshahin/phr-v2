@@ -13,6 +13,10 @@ export class MedicalImagesPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera) {
   
   }
+
+  goTo(pageName){
+    this.navCtrl.push(pageName);
+  }
   
   takePicture(){
     const options: CameraOptions = {
