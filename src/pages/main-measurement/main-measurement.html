@@ -7,11 +7,14 @@
 <ion-header>
 
 	<ion-navbar>
-		<ion-title>All Measurements</ion-title>
+		<ion-title>Measurements</ion-title>
 		<ion-buttons end>
 			<button ion-button icon-only (click)="showMeasurementType()">
 				<ion-icon name="add"></ion-icon>
 			</button>
+			<button ion-button icon-only (click)="goTo('MainPage')">
+					<ion-icon name="home"></ion-icon>
+				</button>
 		</ion-buttons>
 	</ion-navbar>
 
@@ -50,4 +53,43 @@
 				Cholesterol				
 		</button>
 	</ion-list>
+
+	 <!-- Add quick access -->
+	 <ion-fab bottom right>
+		<button ion-fab color="primary">
+			<ion-icon name="add" ></ion-icon>
+		</button>
+	
+		<ion-fab-list side= "left">
+	
+			<!-- Medical image quick access button -->
+			<button ion-fab color="primary" (click)="goTo('MedicalImagesPage')">
+				<ion-icon name="images" ></ion-icon>
+			</button>
+			<!-- Surgery quick access-->
+			<button ion-fab color="primary" (click)="goTo('SurgeriesPage')">
+				<ion-icon name="medkit"></ion-icon>
+				</button>
+			<!-- Chronic Disease quick access -->
+			<button ion-fab color="primary" (click)="goTo('ChronicPage')">
+				<ion-icon name="pulse"></ion-icon>
+			</button>
+		</ion-fab-list>
+
+		<ion-fab-list side= "top">
+			<!-- Allergies quick access button  -->
+			<button ion-fab color="primary" (click)="goTo('AllergiesPage')">
+					<ion-icon name="md-color-filter"></ion-icon>
+				</button>
+				<!-- Medication quick access button -->
+				<button ion-fab color="primary" (click)="goTo('MedicationPage')">
+					<ion-icon name="timer"></ion-icon>
+					</button>
+				<!-- Measurement quick access button -->
+				<button ion-fab color="primary" (click)="goTo('MainMeasurementPage')">
+					<ion-icon name="body"></ion-icon>  
+				</button>
+		</ion-fab-list>	
+	</ion-fab>		
+		
 </ion-content>
