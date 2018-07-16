@@ -12,48 +12,43 @@
 </ion-header>
 
 <ion-content >
-  <ion-list>
-    <li> <button ion-button (click)="goTo('MainMeasurementPage')">Measurements</button> </li>
-    <li> <button ion-button (click)="goTo('ChronicPage')">Chronic Diseases</button> </li>
-    <li> <button ion-button (click)="goTo('AllergiesPage')">Allergies</button> </li>
-    <li> <button ion-button (click)="goTo('SurgeriesPage')">Surgeries</button> </li>
-    <li> <button ion-button (click)="goTo('MedicationPage')">Medication</button> </li>
-    <li> <button ion-button (click)="goTo('MedicalImagesPage')">Medical Images</button> </li>
-    <li> <button ion-button (click)="goTo('CallNumberPage')">Call Doctor</button> </li>
-  </ion-list>
-  <!-- Add quick access -->
-  <ion-fab bottom right>
-    <button ion-fab color="primary">
-      <ion-icon name="add" ></ion-icon>
-    </button>
 
-    <ion-fab-list side= "top">
+    <ion-list >
+        <button ion-item (click)="goTo('MainMeasurementPage')">
+          <ion-icon name="body" item-start></ion-icon>
+            Measurements
+          <ion-icon name="md-arrow-forward" item-end></ion-icon>
+        </button>
 
-        <!-- Medical image quick access button -->
-        <button ion-fab color="primary">
+         <button ion-item (click)="goTo('ChronicPage')">
+          <ion-icon name="pulse" item-start></ion-icon>
+            Chronic Diseases	
+          <ion-icon name="md-arrow-forward" item-end></ion-icon>
+        </button>
+    
+        <button ion-item (click)="goTo('AllergiesPage')">
+          <ion-icon name="color-filter" item-start></ion-icon>
+            Allergies
+          <ion-icon name="md-arrow-forward" item-end></ion-icon>
+        </button>
+    
+        <button ion-item (click)="goTo('SurgeriesPage')">
+          <ion-icon name="medkit" item-start></ion-icon>
+            Surgeries        
+          <ion-icon name="md-arrow-forward" item-end></ion-icon>
+        </button>
+    
+        <button ion-item (click)="goTo('MedicationPage')">
+        <ion-icon name="timer" item-start></ion-icon>
+          Medication				
+        <ion-icon name="md-arrow-forward" item-end></ion-icon>
+        </button>
+              
+        <button ion-item (click)="goTo('MedicalImagesPage')">
           <ion-icon name="images"></ion-icon>
+             Medical Images				
+          <ion-icon name="md-arrow-forward" item-end></ion-icon>
         </button>
-        <!-- Vaccination quick access button  -->
-        <button ion-fab color="primary">
-            <ion-icon name="md-color-filter"></ion-icon>
-        </button>
-        <!-- Medication quick access button -->
-        <button ion-fab color="primary">
-            <ion-icon name="timer"></ion-icon>
-          </button>
-        <!-- Measurement quick access button -->
-        <button ion-fab color="primary" (click)="goTo('AddMeasurementPage')">
-          <ion-icon name="body"></ion-icon>  
-        </button>
-
-    </ion-fab-list>
-
-  </ion-fab>
-  <!-- history button "should be next to the add button on the bottom right" -->
-  <ion-fab bottom>
-      <button ion-fab color="primary">
-        <ion-icon name="rewind" ></ion-icon>
-      </button>
-  </ion-fab>
+    </ion-list>
 
 </ion-content>
