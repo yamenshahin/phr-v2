@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar color="phrY">
+  <ion-navbar color="phrLightBlue">
     <ion-title>Add Height</ion-title>
     <ion-buttons end>
       <button ion-button icon-only form="addMeasurementForm" type="submit" [disabled]="addMeasurementForm.invalid">
@@ -18,7 +18,7 @@
 </ion-header>
 
 
-<ion-content color="phrS" padding>
+<ion-content padding>
   <form #addMeasurementForm="ngForm" id="addMeasurementForm" (ngSubmit)="onAddMeasurement()" autocomplete="off">
     <p>Try to add new measurements continuously so the graph would be more precise</p>
     <ion-row>

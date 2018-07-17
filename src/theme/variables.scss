@@ -34,20 +34,36 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #46536a,
-  secondary:  #6d7686,
-  third: #ffb52c,
+  primary:    #e75b5a,
+  secondary:  #f8a42c,
+  third: #f8a42c,
   danger:#f53d3d,
   phr: (
     base: #46536a,
     contrast: #ffffff
   ),
   phrY: (
-    base: #46536a,
-    contrast: #ffb52c
+    base: #ef682c,
+    contrast: #ffffff
   ),
-  phrS: (
-    base: #6d7686,
+  phrOrange: (
+    base: #ef682c,
+    contrast: #ffffff
+  ),
+  phrLightBlue: (
+    base: #1593c8,
+    contrast: #ffffff
+  ),
+  phrRoyalBlue: (
+    base: #5c43ea,
+    contrast: #ffffff
+  ),
+  phrMandy: (
+    base: #e75b5a,
+    contrast: #ffffff
+  ),
+  phrEastBay: (
+    base: #413a70,
     contrast: #ffffff
   )
 );
@@ -62,7 +78,7 @@ $colors: (
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
-$background-md-color: color($colors, secondary);
+//$background-md-color: color($colors, secondary);
 
 // App Windows Variables
 // --------------------------------------------------
@@ -78,7 +94,7 @@ $background-md-color: color($colors, secondary);
 // so that the above variables are used and Ionic's
 // default are overridden.
 
-@import "ionic.theme.dark";
+@import "ionic.theme.default";
 
 
 // Ionicons

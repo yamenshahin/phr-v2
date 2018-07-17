@@ -5,14 +5,13 @@
       <ion-icon name='menu'></ion-icon>
     </button>
     <ion-title> Home
-      <ion-icon name="heart-outline" item-end></ion-icon>
     </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content color="phrS">
+<ion-content>
   <ion-toolbar>
     <ion-buttons start>
       <button ion-button icon-only>
@@ -64,48 +63,42 @@
     </ion-fab-list>
 
   </ion-fab>
-  <!-- history button "should be next to the add button on the bottom right" -->
-  <ion-fab bottom>
-    <button ion-fab color="primary">
-      <ion-icon name="rewind"></ion-icon>
+  <ion-list>
+    <button ion-item (click)="goTo('MainMeasurementPage')">
+      <ion-icon name="body" item-start></ion-icon>
+      Measurements
+      <ion-icon name="md-arrow-forward" item-end></ion-icon>
     </button>
-  </ion-fab>
-    <ion-list >
-        <button ion-item (click)="goTo('MainMeasurementPage')">
-          <ion-icon name="body" item-start></ion-icon>
-            Measurements
-          <ion-icon name="md-arrow-forward" item-end></ion-icon>
-        </button>
 
-         <button ion-item (click)="goTo('ChronicPage')">
-          <ion-icon name="pulse" item-start></ion-icon>
-            Chronic Diseases	
-          <ion-icon name="md-arrow-forward" item-end></ion-icon>
-        </button>
-    
-        <button ion-item (click)="goTo('AllergiesPage')">
-          <ion-icon name="color-filter" item-start></ion-icon>
-            Allergies
-          <ion-icon name="md-arrow-forward" item-end></ion-icon>
-        </button>
-    
-        <button ion-item (click)="goTo('SurgeriesPage')">
-          <ion-icon name="medkit" item-start></ion-icon>
-            Surgeries        
-          <ion-icon name="md-arrow-forward" item-end></ion-icon>
-        </button>
-    
-        <button ion-item (click)="goTo('MedicationPage')">
-        <ion-icon name="timer" item-start></ion-icon>
-          Medication				
-        <ion-icon name="md-arrow-forward" item-end></ion-icon>
-        </button>
-              
-        <button ion-item (click)="goTo('MedicalImagesPage')">
-          <ion-icon name="images" item-start></ion-icon>
-             Medical Images				
-          <ion-icon name="md-arrow-forward" item-end></ion-icon>
-        </button>
-    </ion-list>
+    <button ion-item (click)="goTo('ChronicPage')">
+      <ion-icon name="pulse" item-start></ion-icon>
+      Chronic Diseases
+      <ion-icon name="md-arrow-forward" item-end></ion-icon>
+    </button>
+
+    <button ion-item (click)="goTo('AllergiesPage')">
+      <ion-icon name="color-filter" item-start></ion-icon>
+      Allergies
+      <ion-icon name="md-arrow-forward" item-end></ion-icon>
+    </button>
+
+    <button ion-item (click)="goTo('SurgeriesPage')">
+      <ion-icon name="medkit" item-start></ion-icon>
+      Surgeries
+      <ion-icon name="md-arrow-forward" item-end></ion-icon>
+    </button>
+
+    <button ion-item (click)="goTo('MedicationPage')">
+      <ion-icon name="timer" item-start></ion-icon>
+      Medication
+      <ion-icon name="md-arrow-forward" item-end></ion-icon>
+    </button>
+
+    <button ion-item (click)="goTo('MedicalImagesPage')">
+      <ion-icon name="images" item-start></ion-icon>
+      Medical Images
+      <ion-icon name="md-arrow-forward" item-end></ion-icon>
+    </button>
+  </ion-list>
 
 </ion-content>
