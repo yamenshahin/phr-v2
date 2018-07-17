@@ -40,7 +40,6 @@ export class MainPage {
     this.authProvider.getMeasurementsWithName(this.token, measurementsName).subscribe( data=>{
       this.measurements= data;
       let chartValue = this.measurements.map(measurements => measurements.value);
-      let chartDate = this.measurements.map(measurements => measurements.date_taken);
       let chartMaxValues = this.chartProvider.chartMax(measurementsName);
       let chartMinValues = this.chartProvider.chartMin(measurementsName);
       let chartLabelValues = this.chartProvider.chartLabelValues;
@@ -51,7 +50,7 @@ export class MainPage {
           labels: chartLabelValues,
           datasets: [
             {
-              data: chartValue,
+              data: chartValue.reverse(),
               borderColor: 'green',
               fill: false
             },
