@@ -14,6 +14,9 @@ import { AuthenticationProvider } from '../providers/authentication/authenticati
 import { Camera } from '@ionic-native/camera';
 import { ChartProvider } from '../providers/chart/chart';
 
+import * as ionicGalleryModal from 'ionic-gallery-modal';
+import { HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +25,8 @@ import { ChartProvider } from '../providers/chart/chart';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule
+    HttpClientModule,
+    ionicGalleryModal.GalleryModalModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -37,7 +41,11 @@ import { ChartProvider } from '../providers/chart/chart';
     AuthenticationProvider,
     Camera,
     TokenProvider,
-    ChartProvider
+    ChartProvider,
+    {
+      provide: HAMMER_GESTURE_CONFIG,
+      useClass: ionicGalleryModal.GalleryModalHammerConfig,
+    },
   ]
 })
 export class AppModule {}
