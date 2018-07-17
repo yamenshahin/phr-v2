@@ -9,7 +9,8 @@
   <ion-navbar color="phrLightBlue">
     <ion-title>Add Height</ion-title>
     <ion-buttons end>
-      <button ion-button icon-only form="addMeasurementForm" type="submit" [disabled]="addMeasurementForm.invalid">
+      <button ion-button icon-only (click)="goTo('ModalMeasurementTypePage')" (click)="presentToast('bottom')"
+       form="addMeasurementForm" type="submit" [disabled]="addMeasurementForm.invalid">
         <ion-icon name="checkmark"></ion-icon>
       </button>
     </ion-buttons>

@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, Platform, AlertController } from 'ionic-angular';
 import { Injectable } from '@angular/core';
 import { environment } from '../../environment';
 import { HttpClient } from '@angular/common/http';
+import { LocalNotifications } from '@ionic-native/local-notifications';
+
 /**
  * Generated class for the AddMedicationPage page.
  *
@@ -24,12 +26,33 @@ export class AddMedicationPage {
   public currentNumberT = 0;
 
 //  jsonList= this.http.get(this.http://localhost:8100/ICD9.json)
-  
-  constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController, public http: HttpClient) {
+  data = { title:'', description:'', date:'', time:'' };
+  constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController,
+     public http: HttpClient, public localNotifications: LocalNotifications, public platform: Platform,
+     public alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddMedicationPage');
+  }
+
+  submit() {
+    console.log(this.data);
+    var date = new Date(this.data.date+" "+this.data.time);
+    console.log(date);
+    this.localNotifications.schedule({
+       text: 'Delayed ILocalNotification',
+       trigger : {at: date},
+       led: 'FF0000',
+      //  sound: this.setSound(),
+    });
+    let alert = this.alertCtrl.create({
+      title: 'Congratulation!',
+      subTitle: 'Notification setup successfully at '+date,
+      buttons: ['OK']
+    });
+    alert.present();
+    this.data = { title:'', description:'', date:'', time:'' };
   }
 
   goTo(pageName){

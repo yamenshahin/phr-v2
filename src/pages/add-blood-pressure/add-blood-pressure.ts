@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
 import { TokenProvider } from '../../providers/token/token';
 
@@ -24,7 +24,8 @@ export class AddBloodPressurePage {
   value; 
   unit_id;
   token;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private authProvider: AuthProvider, private tokenProvider: TokenProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController,
+     private authProvider: AuthProvider, private tokenProvider: TokenProvider) {
   }
 
   ionViewDidLoad() {
@@ -33,6 +34,16 @@ export class AddBloodPressurePage {
 
   goTo(pageName){
     this.navCtrl.push(pageName);
+  }
+
+  
+  presentToast(position){
+    let toast = this.toastCtrl.create({
+      message: 'Great!.. New blood pressure measurement was recorded successfully',
+      duration: 4000,
+      position: position
+    });
+    toast.present();
   }
 
 

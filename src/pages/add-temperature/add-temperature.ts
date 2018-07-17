@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
 import { TokenProvider } from '../../providers/token/token';
 
@@ -25,7 +25,8 @@ export class AddTemperaturePage {
   value; 
   unit_id;
   token;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private authProvider: AuthProvider, private tokenProvider: TokenProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController,
+     private authProvider: AuthProvider, private tokenProvider: TokenProvider) {
   }
 
   ionViewDidLoad() {
@@ -34,6 +35,16 @@ export class AddTemperaturePage {
 
   goTo(pageName){
     this.navCtrl.push(pageName);
+  }
+
+  
+  presentToast(position){
+    let toast = this.toastCtrl.create({
+      message: 'Great!.. New temperature measurement was recorded successfully',
+      duration: 4000,
+      position: position
+    });
+    toast.present();
   }
 
 
