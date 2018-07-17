@@ -1,10 +1,15 @@
 
-<ion-header> 
-  <h1> iBloom </h1>
-</ion-header> 
+<ion-header>
+
+  <ion-navbar color="phrOrange">
+    <ion-title> iBloom
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
 
 
-<ion-content >
+<ion-content>
   <img src="assets/imgs/welcomeimg.png">
 	<form #loginForm="ngForm" (ngSubmit)="onLogin()" autocomplete="off">
     <!-- Handle error -->
@@ -32,10 +37,10 @@
     </ion-row>
     <ion-row>
       <ion-col>
-        <button ion-button class="submit-btn" full type="submit" [disabled]="loginForm.invalid">Login</button>
+        <button ion-button color="phrY" class="submit-btn" full type="submit" [disabled]="loginForm.invalid">Login</button>
       </ion-col>
       <ion-col>
-        <button ion-button full color="dark" (click)="goTo('SignupPage')">Sign Up</button>
+        <button ion-button full color="phr" (click)="goTo('SignupPage')">Sign Up</button>
       </ion-col>
     </ion-row>
   </form>
