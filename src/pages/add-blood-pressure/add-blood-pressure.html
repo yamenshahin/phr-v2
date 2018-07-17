@@ -3,7 +3,7 @@
   <ion-navbar>
     <ion-title>AddBloodPressure</ion-title>
     <ion-buttons end>
-			<button ion-button icon-only>
+			<button ion-button icon-only (click)="goTo('ModalMeasurementTypePage')" (click)="presentToast('bottom')">
 				<ion-icon name="checkmark"></ion-icon>
 			</button>
 		</ion-buttons>
