@@ -25,62 +25,44 @@
     </ion-col>
   </ion-row>
   Possible diseases:
-  <ion-list>
-    <ion-item *ngFor="let item of items">
+  <ion-row>
+      <ion-item *ngFor="let item of items">
       {{ item }}
-    </ion-item>
-  </ion-list>
-  <ion-row>
-    <ion-col>
-      <ion-item>
-        Medication Course
-        <ion-label floating>Drug Name</ion-label>
-        <ion-input type="text" ></ion-input>
       </ion-item>
-      <ion-item>
-        <ion-label floating>Drug Name</ion-label>
-        <ion-input type="text"></ion-input>
-      </ion-item>
-      <ion-item>
-       <!-- Add new drug name -->
-        <!-- <ion-fab >
-          <button ion-fab color="primary">
-            <ion-icon name="add" ></ion-icon>
-          </button>
-        </ion-fab> -->
-        <ion-icon name="add-circle" >
-          </ion-icon>
-  
-      </ion-item>
-    </ion-col>
-  </ion-row>
-  
-  <ion-row>
-    <ion-col>
-      <ion-item>
-        <ion-datetime placeholder="MM/DD/YYYY" displayFormat="MM/DD/YYYY" [(ngModel)]="myDate"></ion-datetime>
-        <ion-label color="primary">Starting Date</ion-label>
-      </ion-item>
-    </ion-col>
-  </ion-row>
+    </ion-row>
 
-  <ion-row>
-    <ion-col>
-      <ion-item>  
-        <h2>Course Duration:</h2>
-        <ion-list>
-          <ion-item>
-          <ion-icon name="remove-circle" (click)="decrement()">
+    <ion-row>
+        <ion-item>  
+          <ion-label floating>Drug Name</ion-label>
+          <ion-input type="text" ></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-item>
+          <ion-label floating>Drug Name</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-item>
+          <ion-icon name="add-circle" >
           </ion-icon>
+        </ion-item>
+      </ion-row>
+      <ion-row>
+        <ion-item>  
+          <h2>Course Duration:</h2>
+          <ion-list>
+            <ion-item>
+            <ion-icon name="remove-circle" (click)="decrement()">
+            </ion-icon>
       {{currentNumber}} Days
           <ion-icon name="add-circle" (click)="increment()">
           </ion-icon>
           </ion-item>
         </ion-list>
       </ion-item>
-    </ion-col>
   </ion-row>
-
   <ion-row>
     <ion-col>
       <ion-item>
@@ -102,10 +84,34 @@
     <ion-col>
       <ion-item>
         <ion-toggle [(ngModel)]="toggleVal" checked="true" start></ion-toggle>
-        <ion-label>Get alarms</ion-label>
+        <ion-label>Notification</ion-label>
       </ion-item>
     </ion-col>
       </ion-row>
+
+      <form (ngSubmit)="submit()">
+        <ion-list>
+          <ion-item>
+            <ion-label floating>Title</ion-label>
+            <ion-input type="text" [(ngModel)]="data.title" name="title"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Description</ion-label>
+            <ion-input type="text" [(ngModel)]="data.description" name="description"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Date</ion-label>
+            <ion-datetime displayFormat="DD/MM/YY" pickerFormat="D MMMM YYYY" [(ngModel)]="data.date" name="date"></ion-datetime>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Time</ion-label>
+            <ion-datetime displayFormat="HH:mm" pickerFormat="HH mm" [(ngModel)]="data.time" name="time"></ion-datetime>
+          </ion-item>
+        </ion-list>
+        <div padding>
+          <button ion-button full round>Add Notification</button>
+        </div>
+      </form>
 
   <ion-row>
       <ion-col>

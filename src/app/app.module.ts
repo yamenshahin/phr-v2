@@ -16,6 +16,7 @@ import { ChartProvider } from '../providers/chart/chart';
 
 import * as ionicGalleryModal from 'ionic-gallery-modal';
 import { HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+import { LocalNotifications } from '@ionic-native/local-notifications';
 
 
 @NgModule({
@@ -46,6 +47,8 @@ import { HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
       provide: HAMMER_GESTURE_CONFIG,
       useClass: ionicGalleryModal.GalleryModalHammerConfig,
     },
+    LocalNotifications
+
   ]
 })
 export class AppModule {}
