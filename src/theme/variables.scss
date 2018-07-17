@@ -34,13 +34,39 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
-  danger:     #f53d3d,
-  light:      #f4f4f4,
-  dark:       #222
+  primary:    #e75b5a,
+  secondary:  #f8a42c,
+  third: #f8a42c,
+  danger:#f53d3d,
+  phr: (
+    base: #46536a,
+    contrast: #ffffff
+  ),
+  phrY: (
+    base: #ef682c,
+    contrast: #ffffff
+  ),
+  phrOrange: (
+    base: #ef682c,
+    contrast: #ffffff
+  ),
+  phrLightBlue: (
+    base: #1593c8,
+    contrast: #ffffff
+  ),
+  phrRoyalBlue: (
+    base: #5c43ea,
+    contrast: #ffffff
+  ),
+  phrMandy: (
+    base: #e75b5a,
+    contrast: #ffffff
+  ),
+  phrEastBay: (
+    base: #413a70,
+    contrast: #ffffff
+  )
 );
-
 
 // App iOS Variables
 // --------------------------------------------------
@@ -52,9 +78,7 @@ $colors: (
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
-
-
-
+//$background-md-color: color($colors, secondary);
 
 // App Windows Variables
 // --------------------------------------------------
